@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: task-cabinet-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          key: task-cabinet-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+      - run: yarn lint
+      - run: yarn test --no-watch --no-progress
