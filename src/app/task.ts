@@ -1,6 +1,6 @@
 export interface Task {
   id: string;
   name: string;
-  deadline: number;
+  deadline: Date;
   estimate: number;
 }
