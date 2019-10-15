@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from './task';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-page-task',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageTaskComponent implements OnInit {
 
-  constructor() { }
+  taskList: Task[] = [];
+
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+    this.taskService.getTaskList().subscribe((taskList) => {
+      this.taskList = taskList;
+    });
   }
 
 }
