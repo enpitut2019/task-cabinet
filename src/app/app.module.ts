@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PageTaskComponent } from './page-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './layout.component';
-import { MatButtonModule, MatCardModule, MatIconModule, MatSliderModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatIconModule, MatProgressBarModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatSliderModule,
+    MatProgressBarModule,
     MatTableModule,
     MatToolbarModule,
     FormsModule,

@@ -10,7 +10,7 @@
         <tr>
           <th>見積もり</th>
           <td>
-            <mat-slider [(ngModel)]="task.estimate" min="1" max="100" disabled></mat-slider>
+            <mat-progress-bar [value]="task.estimate"></mat-progress-bar>
           </td>
         </tr>
       </tbody>
