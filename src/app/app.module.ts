@@ -7,6 +7,7 @@ import { PageTaskComponent } from './page-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutComponent } from './layout.component';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LayoutComponent } from './layout.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

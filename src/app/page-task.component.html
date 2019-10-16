@@ -1,14 +1,16 @@
-<p>page-task works!</p>
-<button mat-button mat-raised-button color="primary">Primary Button!</button>
-<button mat-button mat-raised-button color="secondary">Secondary Button!</button>
+<app-layout>
+  <p>page-task works!</p>
+  <button mat-button mat-raised-button color="primary">Primary Button!</button>
+  <button mat-button mat-raised-button color="secondary">Secondary Button!</button>
 
-<ul>
-  <li *ngFor="let task of taskList">
-    <ul>
-      <li>id: {{task.id}}</li>
-      <li>name: {{task.name}}</li>
-      <li>deadline: {{task.deadline.toString()}}</li>
-      <li>estimate: {{task.estimate}}</li>
-    </ul>
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let task of taskList">
+      <ul>
+        <li>id: {{task.id}}</li>
+        <li>name: {{task.name}}</li>
+        <li>deadline: {{task.deadline.toString()}}</li>
+        <li>estimate: {{task.estimate}}</li>
+      </ul>
+    </li>
+  </ul>
+</app-layout>
