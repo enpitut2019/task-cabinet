@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { PageTaskComponent } from './page-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { PageTaskAddComponent } from './page-task-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageTaskComponent
+    PageTaskComponent,
+    PageTaskAddComponent
   ],
   imports: [
     BrowserModule,
