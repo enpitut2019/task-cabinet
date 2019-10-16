@@ -15,21 +15,14 @@
         </tr>
       </tbody>
     </table>
-    <button mat-button><mat-icon>done</mat-icon><span>完了</span></button>
+    <div class="done-button-wrapper">
+      <button mat-button>
+        <mat-icon>done</mat-icon>
+        <span>完了</span>
+      </button>
+    </div>
   </mat-card>
-
-  <p>page-task works!</p>
-  <button mat-button mat-raised-button color="primary">Primary Button!</button>
-  <button mat-button mat-raised-button color="secondary">Secondary Button!</button>
-
-  <ul>
-    <li *ngFor="let task of taskList">
-      <ul>
-        <li>id: {{task.id}}</li>
-        <li>name: {{task.name}}</li>
-        <li>deadline: {{task.deadline.toString()}}</li>
-        <li>estimate: {{task.estimate}}</li>
-      </ul>
-    </li>
-  </ul>
+  <button mat-fab class="add-button" aria-label="タスクを追加">
+    <mat-icon>add</mat-icon>
+  </button>
 </app-layout>

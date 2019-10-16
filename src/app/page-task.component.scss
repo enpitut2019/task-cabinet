@@ -5,3 +5,21 @@ mat-card {
 mat-icon + span {
   padding-left: 0.5rem;
 }
+
+mat-slider {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.add-button {
+  bottom: 1rem;
+  position: fixed;
+  right: 1rem;
+}
+
+.done-button-wrapper {
+  text-align: right;
+}
