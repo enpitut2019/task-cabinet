@@ -1,4 +1,23 @@
 <app-layout>
+  <mat-card *ngFor="let task of taskList">
+    <mat-card-title>{{task.name}}</mat-card-title>
+    <table>
+      <tbody>
+        <tr>
+          <th>期限</th>
+          <td>{{task.deadline}}</td>
+        </tr>
+        <tr>
+          <th>見積もり</th>
+          <td>
+            <mat-slider [(ngModel)]="task.estimate" min="1" max="100" disabled></mat-slider>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button mat-button><mat-icon>done</mat-icon><span>完了</span></button>
+  </mat-card>
+
   <p>page-task works!</p>
   <button mat-button mat-raised-button color="primary">Primary Button!</button>
   <button mat-button mat-raised-button color="secondary">Secondary Button!</button>
