@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './layout.component';
 import { MatButtonModule, MatCardModule, MatIconModule, MatProgressBarModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { PageTaskAddComponent } from './page-task-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageTaskComponent,
-    LayoutComponent
+    PageTaskAddComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
