@@ -6,8 +6,20 @@ import { AppComponent } from './app.component';
 import { PageTaskComponent } from './page-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './layout.component';
-import { MatButtonModule, MatCardModule, MatIconModule, MatProgressBarModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatProgressBarModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSliderModule
+} from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { PageTaskAddComponent } from './page-task-add.component';
 
 @NgModule({
@@ -28,6 +40,11 @@ import { PageTaskAddComponent } from './page-task-add.component';
     MatTableModule,
     MatToolbarModule,
     FormsModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
