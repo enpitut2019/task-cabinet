@@ -16,7 +16,7 @@ import {
   MatDatepickerModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSliderModule
+  MatSliderModule,
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
