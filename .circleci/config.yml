@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     branches:
-      ignore: gh-pages
+      ignore:
+        - gh-pages
     working_directory: ~/repo
     docker:
       - image: circleci/node:10-browsers
