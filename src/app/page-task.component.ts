@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Task } from './task';
 import { TaskService } from './task.service';
 
@@ -11,7 +11,10 @@ export class PageTaskComponent implements OnInit {
 
   taskList: Task[] = [];
 
-  constructor(private taskService: TaskService) { }
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private taskService: TaskService
+  ) { }
 
   ngOnInit() {
     this.taskService.getTaskList().subscribe((taskList) => {
@@ -19,4 +22,9 @@ export class PageTaskComponent implements OnInit {
     });
   }
 
+  doneTask(task: Task) {
+    this.taskService.doneTask(task).subscribe(() => {
+      this.changeDetectorRef.detectChanges();
+    });
+  }
 }
