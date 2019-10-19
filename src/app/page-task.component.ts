@@ -14,9 +14,18 @@ export class PageTaskComponent implements OnInit {
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+    this.updateTaskList();
+  }
+
+  doneTask(task: Task) {
+    this.taskService.doneTask(task).subscribe(() => {
+      this.updateTaskList();
+    });
+  }
+
+  updateTaskList() {
     this.taskService.getTaskList().subscribe((taskList) => {
       this.taskList = taskList;
     });
   }
-
 }
