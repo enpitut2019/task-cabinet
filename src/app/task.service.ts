@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Task } from './task';
 import { Observable, of } from 'rxjs';
 import { MOCK_TASK_LIST } from './mock-task-list';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,15 @@ export class TaskService {
   }
 
   getTaskList(): Observable<Task[]> {
-    return of(this.taskList);
+    return of(this.taskList.slice());
+  }
+
+  getTaskListOrderByAsap(): Observable<Task[]> {
+    return this.getTaskList().pipe(map((t: Task[]) => {
+      return t.sort((t1: Task, t2: Task) => {
+        return t1.deadline.valueOf() - t2.deadline.valueOf();
+      });
+    }));
   }
 
 }

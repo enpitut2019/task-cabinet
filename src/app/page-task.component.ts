@@ -24,7 +24,7 @@ export class PageTaskComponent implements OnInit {
   }
 
   updateTaskList() {
-    this.taskService.getTaskList().subscribe((taskList) => {
+    this.taskService.getTaskListOrderByAsap().subscribe((taskList) => {
       this.taskList = taskList;
     });
   }
