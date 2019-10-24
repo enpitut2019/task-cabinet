@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "env CIRCLECI=1 ng deploy --base-href=/task-cabinet/"
+    "deploy": "ng deploy --base-href=/task-cabinet/ --message 'Auto-generated commit [ci skip]'"
   },
   "private": true,
   "dependencies": {
