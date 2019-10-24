@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng deploy --base-href=/task-cabinet/"
+    "deploy": "env CIRCLECI=1 ng deploy --base-href=/task-cabinet/"
   },
   "private": true,
   "dependencies": {
