@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from './task';
 import uuid from 'uuid';
+import { TaskService } from './task.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-task-add',
@@ -16,9 +18,18 @@ export class PageTaskAddComponent implements OnInit {
     estimate: 1,
   };
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private taskService: TaskService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  submit() {
+    this.taskService.addTask(this.task).subscribe(() => {
+      this.router.navigate(['/']);
+    });
   }
 
 }
