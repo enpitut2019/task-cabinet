@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDatepickerModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { PageTaskAddComponent } from './page-task-add.component';
 
@@ -13,7 +14,7 @@ describe('PageTaskAddComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ PageTaskAddComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      imports: [ MatDatepickerModule, MatMomentDateModule ],
+      imports: [ MatDatepickerModule, MatMomentDateModule, RouterTestingModule ],
     })
     .compileComponents();
   }));
