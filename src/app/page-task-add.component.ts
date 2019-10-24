@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from './task';
-import uuid from 'uuid';
-import { TaskService } from './task.service';
 import { Router } from '@angular/router';
+import uuid from 'uuid';
+import { Task } from './task';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-page-task-add',

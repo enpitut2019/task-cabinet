@@ -1,16 +1,16 @@
 <app-layout>
   <div class="task-add-container">
     <mat-form-field>
-      <input matInput placeholder="タスク名">
+      <input matInput placeholder="タスク名" [(ngModel)]="task.name">
     </mat-form-field>
     <mat-form-field class="date-picker">
-      <input matInput [matDatepicker]="date" placeholder="タスクの期限">
+      <input matInput [matDatepicker]="date" [(ngModel)]="task.deadline" placeholder="タスクの期限">
       <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
       <mat-datepicker touchUi #date></mat-datepicker>
     </mat-form-field>
     <mat-label>見積り</mat-label>
     <mat-slider
-      [(value)]="task.estimate"
+      [(ngModel)]="task.estimate"
       thumbLabel
       min="1"
       max="5"
