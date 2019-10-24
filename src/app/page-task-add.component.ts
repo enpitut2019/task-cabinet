@@ -27,6 +27,9 @@ export class PageTaskAddComponent implements OnInit {
   }
 
   submit() {
+    if (this.task.name === '') {
+      return;
+    }
     this.taskService.addTask(this.task).subscribe(() => {
       this.router.navigate(['/']);
     });
