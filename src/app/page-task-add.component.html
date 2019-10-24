@@ -1,7 +1,8 @@
 <app-layout>
   <div class="task-add-container">
     <mat-form-field>
-      <input matInput placeholder="タスク名" [(ngModel)]="task.name">
+      <input matInput placeholder="タスク名" [(ngModel)]="task.name" required autofocus>
+      <mat-error *ngIf="task.name === ''">タスクの名前を入力してください</mat-error>
     </mat-form-field>
     <mat-form-field class="date-picker">
       <input matInput [matDatepicker]="date" [(ngModel)]="task.deadline" placeholder="タスクの期限">
