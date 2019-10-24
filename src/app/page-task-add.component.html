@@ -1,1 +1,22 @@
-<p>page-task-add works!</p>
+<app-layout>
+  <div class="task-add-container">
+    <mat-form-field>
+      <input matInput placeholder="タスク名" [(ngModel)]="task.name">
+    </mat-form-field>
+    <mat-form-field class="date-picker">
+      <input matInput [matDatepicker]="date" [(ngModel)]="task.deadline" placeholder="タスクの期限">
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #date></mat-datepicker>
+    </mat-form-field>
+    <mat-label>見積り</mat-label>
+    <mat-slider
+      [(ngModel)]="task.estimate"
+      thumbLabel
+      min="1"
+      max="5"
+    ></mat-slider>
+    <button mat-button mat-raised-button color="accent" class="add-button" aria-label="タスクを追加">
+      タスクを追加
+    </button>
+  </div>
+</app-layout>
