@@ -21,6 +21,8 @@ import {
 import { FormsModule } from '@angular/forms';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { PageTaskAddComponent } from './page-task-add.component';
+import { MatGridListModule } from '@angular/material';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,8 +47,9 @@ import { PageTaskAddComponent } from './page-task-add.component';
     MatFormFieldModule,
     MatInputModule,
     MatSliderModule,
+    MatGridListModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

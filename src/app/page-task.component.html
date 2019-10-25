@@ -1,20 +1,22 @@
 <app-layout>
   <mat-card *ngFor="let task of taskList">
     <mat-card-title>{{task.name}}</mat-card-title>
-    <table>
-      <tbody>
-        <tr>
-          <th>期限</th>
-          <td>{{task.deadline}}</td>
-        </tr>
-        <tr>
-          <th>見積もり</th>
-          <td>
-            <mat-progress-bar [value]="task.estimate"></mat-progress-bar>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <mat-grid-list cols="4" rowHeight="2rem">
+      <mat-grid-tile [colspan]="1" [rowspan]="1" class="task-header">
+        期限
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="3" [rowspan]="1" class="task-deadline">
+        <div class="task-deadline">
+          {{ formatDatetime(task.deadline) }}
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" class="task-header">
+        見積もり
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="3" class="task-deadline">
+        <mat-progress-bar [value]="task.estimate"></mat-progress-bar>
+      </mat-grid-tile>
+    </mat-grid-list>
     <div class="done-button-wrapper">
       <button mat-button (click)="doneTask(task)">
         <mat-icon>done</mat-icon>
