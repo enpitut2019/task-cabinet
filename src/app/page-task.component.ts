@@ -33,10 +33,12 @@ export class PageTaskComponent implements OnInit {
   formatDatetime(datetime: Date) {
     const q = new Date(datetime);
     const now = new Date();
-    if (q.getUTCFullYear() === now.getUTCFullYear()) {
-      return  this.datePipe.transform(q, 'M月d日 HH:mm');
+    const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
+    const qDayName = dayNames[q.getDay()];
+    if (q.getFullYear() === now.getFullYear()) {
+      return  this.datePipe.transform(q, 'M月d日 HH:mm') + ` (${qDayName})`;
     } else {
-      return  this.datePipe.transform(q, 'yyyy年M月d日 HH:mm');
+      return  this.datePipe.transform(q, 'yyyy年M月d日 HH:mm') + ` (${qDayName})`;
     }
   }
 }
