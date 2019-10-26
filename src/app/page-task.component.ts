@@ -36,9 +36,9 @@ export class PageTaskComponent implements OnInit {
     const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
     const qDayName = dayNames[q.getDay()];
     if (q.getFullYear() === now.getFullYear()) {
-      return  this.datePipe.transform(q, 'M月d日 HH:mm') + ` (${qDayName})`;
+      return  this.datePipe.transform(q, `M月d日(${qDayName}) HH:mm`);
     } else {
-      return  this.datePipe.transform(q, 'yyyy年M月d日 HH:mm') + ` (${qDayName})`;
+      return  this.datePipe.transform(q, `yyyy年M月d日(${qDayName}) HH:mm`);
     }
   }
 }
