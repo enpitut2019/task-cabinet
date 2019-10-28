@@ -27,3 +27,12 @@ table {
 .spacer {
   height: 5rem;
 }
+
+.task-header {
+  font-weight: bold;
+}
+
+.task-deadline {
+  position: absolute;
+  left: 1px;
+}

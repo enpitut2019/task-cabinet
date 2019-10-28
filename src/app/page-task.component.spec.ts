@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageTaskComponent } from './page-task.component';
+import { DatePipe } from '@angular/common';
 
 describe('PageTaskComponent', () => {
   let component: PageTaskComponent;
@@ -11,6 +12,7 @@ describe('PageTaskComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ PageTaskComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ DatePipe ],
     })
     .compileComponents();
   }));
