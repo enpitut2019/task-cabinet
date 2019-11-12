@@ -23,6 +23,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { PageTaskAddComponent } from './page-task-add.component';
 import { MatGridListModule } from '@angular/material';
 import { DatePipe } from '@angular/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { DatePipe } from '@angular/common';
     MatInputModule,
     MatSliderModule,
     MatGridListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
