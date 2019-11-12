@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:pwa": "ng build --base-href=/task-cabinet/ --prod && http-server -p 8080 -c-1 dist/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
