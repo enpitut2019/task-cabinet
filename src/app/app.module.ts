@@ -25,6 +25,7 @@ import { MatGridListModule } from '@angular/material';
 import { DatePipe } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PageSignInComponent } from './page-sign-in.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { environment } from '../environments/environment';
     PageTaskComponent,
     PageTaskAddComponent,
     LayoutComponent,
+    PageSignInComponent,
   ],
   imports: [
     BrowserModule,
