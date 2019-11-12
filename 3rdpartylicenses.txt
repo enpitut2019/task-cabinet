@@ -120,6 +120,8 @@ THE SOFTWARE.
 
 @angular/material/form-field
 
+@angular/material/grid-list
+
 @angular/material/icon
 
 @angular/material/progress-bar
@@ -132,6 +134,9 @@ THE SOFTWARE.
 MIT
 
 @angular/router
+MIT
+
+@angular/service-worker
 MIT
 
 core-js
