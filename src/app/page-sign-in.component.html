@@ -1,1 +1,24 @@
-<p>page-sign-in works!</p>
+<app-layout>
+  <div class="container">
+    <mat-form-field>
+      <input autofocus
+             matInput
+             placeholder="メールアドレス"
+             required
+             type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+             placeholder="パスワード"
+             required
+             type="password">
+    </mat-form-field>
+    <button aria-label="サインイン"
+            class="sign-in-btn"
+            color="accent"
+            mat-button
+            mat-raised-button>
+      サインイン
+    </button>
+  </div>
+</app-layout>
