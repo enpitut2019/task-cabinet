@@ -1,24 +1,30 @@
 <app-layout>
-  <div class="container">
+  <form (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input autofocus
+      <input [(ngModel)]="email"
+             autocomplete
+             autofocus
              matInput
+             name="email"
              placeholder="メールアドレス"
              required
              type="text">
     </mat-form-field>
     <mat-form-field>
-      <input matInput
+      <input [(ngModel)]="password"
+             autocomplete
+             matInput
+             name="password"
              placeholder="パスワード"
              required
              type="password">
     </mat-form-field>
     <button aria-label="ログイン"
-            class="sign-in-btn"
             color="accent"
             mat-button
-            mat-raised-button>
+            mat-raised-button
+            type="submit">
       ログイン
     </button>
-  </div>
+  </form>
 </app-layout>
