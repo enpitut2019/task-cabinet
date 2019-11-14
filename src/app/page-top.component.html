@@ -1,42 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/">Task Cabinet</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/top">Top</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/add">Add</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="top-section">
-  <div class="container">
-    <div class="service-description">
-      <div class="service-description-inner">
-        <div class="service-title">
-          Task Cabinet
+<app-layout>
+  <div class="top-section">
+    <div class="container">
+      <div class="service-description">
+        <div class="service-description-inner">
+          <div class="service-title">
+            Task Cabinet
+          </div>
+          <div class="service-description-content">
+            今、自分が何をすべきかを通知してくれるタスク管理ツール「Task Cabinet」 乱雑に自分の全てのタスクが一覧表示され、タスク期限直前などユーザが決めた時間に通知する一般的なタスク管理ツールなどとは異なり、 登録したタスクの完了期限と大まかな見積もり時間に基づいてやるべきタスクの提案したり、他タスクの忘却を防止できます。
+          </div>
+          <button mat-flat-button routerLink="/task" class="login-button">ログイン</button>
         </div>
-        <div class="service-description-content">
-          今、自分が何をすべきかを通知してくれるタスク管理ツール「Task Cabinet」 乱雑に自分の全てのタスクが一覧表示され、タスク期限直前などユーザが決めた時間に通知する一般的なタスク管理ツールなどとは異なり、 登録したタスクの完了期限と大まかな見積もり時間に基づいてやるべきタスクの提案したり、他タスクの忘却を防止できます。
-        </div>
-        <button type="button" routerLink="#" class="btn btn-outline-primary btn-lg">ログイン</button>
       </div>
     </div>
   </div>
-</div>
-<footer class="top-footer">
-  <div class="container">
-    <hr>
-    <p class="copy-right">
-      This template is made with Joefrey by
-      <a href="https://colorlib.com" target="_blank">Colorlib</a>
-    </p>
-  </div>
-</footer>
-<router-outlet></router-outlet>
+  <footer class="top-footer">
+    <div class="container">
+      <hr>
+      <p class="copy-right">
+        This template is made with Joefrey by
+        <a href="https://colorlib.com" target="_blank">Colorlib</a>
+      </p>
+    </div>
+  </footer>
+</app-layout>

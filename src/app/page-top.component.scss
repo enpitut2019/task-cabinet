@@ -1,3 +1,9 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80vw;
+}
+
 .top-section {
   position: relative;
   overflow: hidden;
@@ -40,14 +46,13 @@
   height: calc(100vh - 5rem);
 }
 
-.service-description-inner > .btn-outline-primary {
-  background-color: white;
-  border: none;
-}
-
-.service-description-inner > .btn-outline-primary:hover {
-  background-color: #0dedff;
-  border: none;
+.login-button {
+  color: #26a84e;
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+  outline: none;
 }
 
 .top-footer {

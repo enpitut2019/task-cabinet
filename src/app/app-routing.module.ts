@@ -6,9 +6,9 @@ import { PageTopComponent } from './page-top.component';
 
 
 const routes: Routes = [
-  { path: '', component: PageTaskComponent },
+  { path: 'task', component: PageTaskComponent },
   { path: 'add', component: PageTaskAddComponent },
-  { path: 'top', component: PageTopComponent },
+  { path: '', component: PageTopComponent },
 ];
 
 @NgModule({
