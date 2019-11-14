@@ -25,6 +25,7 @@ import { MatGridListModule } from '@angular/material';
 import { DatePipe } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PageTopComponent } from './page-top.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { environment } from '../environments/environment';
     PageTaskComponent,
     PageTaskAddComponent,
     LayoutComponent,
+    PageTopComponent,
   ],
   imports: [
     BrowserModule,
