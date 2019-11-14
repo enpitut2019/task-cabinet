@@ -1,0 +1,52 @@
+.top-section {
+  position: relative;
+  overflow: hidden;
+  background-image: url(../assets/img/top-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-description {
+  display: table;
+  width: 100%;
+  height: calc(100vh - 5rem);
+}
+
+.service-description-inner {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.service-title {
+  font-size: 55px;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin-bottom: 55px;
+  line-height: 1.18;
+  color: white;
+}
+
+.service-description-content {
+  font-size: 15px;
+  line-height: 1.8;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin-bottom: 57px;
+}
+
+.top-section.container {
+  padding: 0 2em;
+  height: calc(100vh - 5rem);
+}
+
+.service-description-inner > .btn-outline-primary {
+  background-color: white;
+  border: none;
+}
+
+.service-description-inner > .btn-outline-primary:hover {
+  background-color: #0dedff;
+  border: none;
+}
+
