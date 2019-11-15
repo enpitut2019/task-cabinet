@@ -26,6 +26,7 @@ import { DatePipe } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PageTopComponent } from './page-top.component';
+import { PageSignInComponent } from './page-sign-in.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PageTopComponent } from './page-top.component';
     PageTaskAddComponent,
     LayoutComponent,
     PageTopComponent,
+    PageSignInComponent,
   ],
   imports: [
     BrowserModule,
