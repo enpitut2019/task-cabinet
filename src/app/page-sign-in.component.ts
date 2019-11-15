@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-sign-in',
@@ -10,7 +11,7 @@ export class PageSignInComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.email = '';
@@ -18,5 +19,6 @@ export class PageSignInComponent implements OnInit {
   }
 
   onSubmit() {
+    this.router.navigate(['task']);
   }
 }

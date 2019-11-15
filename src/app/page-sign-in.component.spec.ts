@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
 import { PageSignInComponent } from './page-sign-in.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PageSignInComponent', () => {
   let component: PageSignInComponent;
@@ -11,7 +12,7 @@ describe('PageSignInComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PageSignInComponent ],
-      imports: [ FormsModule ],
+      imports: [ FormsModule, RouterTestingModule ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();
