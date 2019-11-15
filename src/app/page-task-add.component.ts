@@ -31,7 +31,7 @@ export class PageTaskAddComponent implements OnInit {
       return;
     }
     this.taskService.addTask(this.task).subscribe(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['task']);
     });
   }
 
