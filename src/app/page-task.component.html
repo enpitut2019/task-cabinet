@@ -1,7 +1,7 @@
 <app-layout>
     <div class ="changePushNoticeState-button-wrapper">
       <button *ngIf="isSubscribing" mat-mini-fab (click)="onUnsubscribe()">
-        <mat-icon>notifications_activate</mat-icon>
+        <mat-icon>notifications_active</mat-icon>
       </button>
       <button *ngIf="!isSubscribing" mat-mini-fab (click)="onSubscribe()" color="primary">
         <mat-icon>notifications_off</mat-icon>
