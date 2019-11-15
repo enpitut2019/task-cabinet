@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSignInComponent implements OnInit {
 
+  email: string;
+  password: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.email = '';
+    this.password = '';
   }
 
+  onSubmit() {
+  }
 }
