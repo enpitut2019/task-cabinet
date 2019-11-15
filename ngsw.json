@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1573535011683,
+  "timestamp": 1573802992657,
   "index": "/task-cabinet/index.html",
   "assetGroups": [
     {
@@ -10,13 +10,13 @@
       "urls": [
         "/task-cabinet/favicon.ico",
         "/task-cabinet/index.html",
-        "/task-cabinet/main-es2015.8c758efe6e92a3cdc337.js",
-        "/task-cabinet/main-es5.8c758efe6e92a3cdc337.js",
+        "/task-cabinet/main-es2015.856986455281b6b09b71.js",
+        "/task-cabinet/main-es5.856986455281b6b09b71.js",
         "/task-cabinet/manifest.webmanifest",
-        "/task-cabinet/polyfills-es2015.fad558c78a34f48ae57e.js",
-        "/task-cabinet/polyfills-es5.741af51aaedba3064fa2.js",
-        "/task-cabinet/runtime-es2015.ea093ca02a613b0bc093.js",
-        "/task-cabinet/runtime-es5.ea093ca02a613b0bc093.js",
+        "/task-cabinet/polyfills-es2015.aae6f3d9c4df05b0c3e5.js",
+        "/task-cabinet/polyfills-es5.226440c3eee99707c5b1.js",
+        "/task-cabinet/runtime-es2015.5445a2ac62601633e66c.js",
+        "/task-cabinet/runtime-es5.5445a2ac62601633e66c.js",
         "/task-cabinet/styles.d9dc716df0c684d997ec.css"
       ],
       "patterns": []
@@ -33,7 +33,9 @@
         "/task-cabinet/assets/icons/icon-384x384.png",
         "/task-cabinet/assets/icons/icon-512x512.png",
         "/task-cabinet/assets/icons/icon-72x72.png",
-        "/task-cabinet/assets/icons/icon-96x96.png"
+        "/task-cabinet/assets/icons/icon-96x96.png",
+        "/task-cabinet/assets/img/top-bg.png",
+        "/task-cabinet/top-bg.4869b96f9250df560f5d.png"
       ],
       "patterns": []
     }
@@ -48,16 +50,18 @@
     "/task-cabinet/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/task-cabinet/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/task-cabinet/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/task-cabinet/assets/img/top-bg.png": "ea87519ed8c9aa2f6e140be27fe4502b2ba896a4",
     "/task-cabinet/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/task-cabinet/index.html": "382f6b8d08cef9b6f91e10935a2518c488a707ac",
-    "/task-cabinet/main-es2015.8c758efe6e92a3cdc337.js": "a93b1a5b3117ee4e24c9e2c004e06b9b4de5f4d1",
-    "/task-cabinet/main-es5.8c758efe6e92a3cdc337.js": "8b2c0302f6436f3e9e0449b2bc9436be6f149904",
+    "/task-cabinet/index.html": "c81b124650153200d513f4ba48129299ee36321c",
+    "/task-cabinet/main-es2015.856986455281b6b09b71.js": "36dde442fcf535cc7c5836040faf6121329645a1",
+    "/task-cabinet/main-es5.856986455281b6b09b71.js": "9ee366f9cc2d110ee5715618b2b86d7f6e150499",
     "/task-cabinet/manifest.webmanifest": "ec3e3bb677c535a7600fac2713beaf267eb192af",
-    "/task-cabinet/polyfills-es2015.fad558c78a34f48ae57e.js": "422e16b8bc38dfcc1092cd3222cdb4cf67a3070f",
-    "/task-cabinet/polyfills-es5.741af51aaedba3064fa2.js": "97f3206053feea2cc211eeb02218b0b7c0200de3",
-    "/task-cabinet/runtime-es2015.ea093ca02a613b0bc093.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/task-cabinet/runtime-es5.ea093ca02a613b0bc093.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/task-cabinet/styles.d9dc716df0c684d997ec.css": "26453d47ec36430b523ace93361172ee2488aa30"
+    "/task-cabinet/polyfills-es2015.aae6f3d9c4df05b0c3e5.js": "8de2e636d91d4155f6f20ee673ad197214a9b3df",
+    "/task-cabinet/polyfills-es5.226440c3eee99707c5b1.js": "c8ff2585fe75e0bac9b870853c3ac293e320807c",
+    "/task-cabinet/runtime-es2015.5445a2ac62601633e66c.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/task-cabinet/runtime-es5.5445a2ac62601633e66c.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/task-cabinet/styles.d9dc716df0c684d997ec.css": "26453d47ec36430b523ace93361172ee2488aa30",
+    "/task-cabinet/top-bg.4869b96f9250df560f5d.png": "ea87519ed8c9aa2f6e140be27fe4502b2ba896a4"
   },
   "navigationUrls": [
     {
