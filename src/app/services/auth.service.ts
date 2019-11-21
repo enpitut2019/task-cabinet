@@ -42,7 +42,7 @@ export class AuthService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.getAuthHeader()
+        Authorization: this.getAuthHeader()
       })
     };
     this.http.put(`${environment.apiUrl}/tcs/user/${this.getUserId()}/logout`, null, httpOptions)
