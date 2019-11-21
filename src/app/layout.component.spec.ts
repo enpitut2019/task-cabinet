@@ -2,6 +2,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LayoutComponent } from './layout.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CookieService } from 'ngx-cookie-service';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -10,7 +13,9 @@ describe('LayoutComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LayoutComponent ],
+      imports: [ RouterTestingModule, HttpClientTestingModule ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ CookieService ]
     })
     .compileComponents();
   }));

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { PageSignInComponent } from './page-sign-in.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CookieService } from 'ngx-cookie-service';
 
 describe('PageSignInComponent', () => {
   let component: PageSignInComponent;
@@ -12,8 +14,9 @@ describe('PageSignInComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PageSignInComponent ],
-      imports: [ FormsModule, RouterTestingModule ],
+      imports: [ FormsModule, RouterTestingModule, HttpClientTestingModule ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ CookieService ]
     })
     .compileComponents();
   }));

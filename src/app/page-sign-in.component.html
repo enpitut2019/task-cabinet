@@ -1,7 +1,12 @@
 <app-layout>
+  <div *ngIf="this.errorMessage !== ''" class="alert alert-danger" role="alert">
+    <button type="button" class="close-alert" (click)="closeAlert()">×</button>
+    <i class="material-icons">error</i>
+    {{ this.errorMessage }}
+  </div>
   <form (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input [(ngModel)]="email"
+      <input [(ngModel)]="login.email"
              autocomplete
              autofocus
              matInput
@@ -11,7 +16,7 @@
              type="text">
     </mat-form-field>
     <mat-form-field>
-      <input [(ngModel)]="password"
+      <input [(ngModel)]="login.password"
              autocomplete
              matInput
              name="password"
@@ -23,7 +28,8 @@
             color="accent"
             mat-button
             mat-raised-button
-            type="submit">
+            type="submit"
+            class="login">
       ログイン
     </button>
   </form>
