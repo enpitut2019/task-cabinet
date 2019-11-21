@@ -27,6 +27,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PageTopComponent } from './page-top.component';
 import { PageSignInComponent } from './page-sign-in.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -54,9 +56,13 @@ import { PageSignInComponent } from './page-sign-in.component';
     MatInputModule,
     MatSliderModule,
     MatGridListModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [DatePipe],
+  providers: [
+    DatePipe,
+    CookieService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

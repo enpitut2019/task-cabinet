@@ -1,7 +1,7 @@
 <app-layout>
   <form (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input [(ngModel)]="email"
+      <input [(ngModel)]="login.email"
              autocomplete
              autofocus
              matInput
@@ -11,7 +11,7 @@
              type="text">
     </mat-form-field>
     <mat-form-field>
-      <input [(ngModel)]="password"
+      <input [(ngModel)]="login.password"
              autocomplete
              matInput
              name="password"
