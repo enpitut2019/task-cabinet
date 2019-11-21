@@ -1,4 +1,9 @@
 <app-layout>
+  <div *ngIf="this.errorMessage !== ''" class="alert alert-danger" role="alert">
+    <button type="button" class="close-alert" (click)="closeAlert()">×</button>
+    <i class="material-icons">error</i>
+    {{ this.errorMessage }}
+  </div>
   <form (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input [(ngModel)]="login.email"
@@ -23,7 +28,8 @@
             color="accent"
             mat-button
             mat-raised-button
-            type="submit">
+            type="submit"
+            class="login">
       ログイン
     </button>
   </form>

@@ -16,6 +16,7 @@ export class PageSignInComponent implements OnInit {
     email: '',
     password: '',
   };
+  errorMessage = '';
 
   constructor(private router: Router, private authService: AuthService) { }
 
@@ -25,14 +26,18 @@ export class PageSignInComponent implements OnInit {
 
   }
 
+  closeAlert() {
+    this.errorMessage = '';
+  }
+
   onSubmit() {
     this.authService.login(this.login)
       .then((res) => {
-        console.info(res);
         this.router.navigate(['task']);
       })
       .catch((err) => {
         console.error(err);
+        this.errorMessage = 'メールアドレスとパスワードに間違いがないか確認してください。';
       });
   }
 }

@@ -40,8 +40,7 @@ export class AuthService {
   }
 
   isLogin(): Boolean {
-    const token = this.cookieService.get('id_token');
-    return token !== undefined;
+    return this.cookieService.check('id_token');
   }
 
   getAuthHeader(): string {

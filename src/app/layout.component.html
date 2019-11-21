@@ -1,5 +1,16 @@
 <header>
-  <mat-toolbar>Task Cabinet</mat-toolbar>
+  <mat-toolbar>
+    <span routerLink="/" class="service-icon">
+      Task Cabinet
+    </span>
+    <div *ngIf="this.authService.isLogin() === true; then logout; else login"></div>
+    <ng-template #logout>
+      <button mat-button color="warn" class="right" (click)="pushLogout()">ログアウト</button>
+    </ng-template>
+    <ng-template #login>
+      <button mat-button color="primary" class="right" (click)="pushLogin()">ログイン</button>
+    </ng-template>
+  </mat-toolbar>
 </header>
 <main>
   <ng-content></ng-content>
