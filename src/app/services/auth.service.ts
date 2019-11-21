@@ -16,14 +16,14 @@ export class AuthService {
   public login(login: Login): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       })
     };
     return this.http.post(`${environment.apiUrl}/tcs/login`, login, httpOptions)
       .toPromise()
       .then((result: any) => {
         if (result.result !== undefined && result.result.token !== undefined) {
-          this.cookieService.set( 'id_token',result.token);
+          this.cookieService.set( 'id_token',result.result.token);
           return result.result;
         }
         else {
