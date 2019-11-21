@@ -23,10 +23,9 @@ export class AuthService {
       .toPromise()
       .then((result: any) => {
         if (result.result !== undefined && result.result.token !== undefined) {
-          this.cookieService.set( 'id_token',result.result.token);
+          this.cookieService.set( 'id_token', result.result.token);
           return result.result;
-        }
-        else {
+        } else {
           return null;
         }
       }).catch((err: any) => {
@@ -39,7 +38,7 @@ export class AuthService {
     this.cookieService.delete('id_token');
   }
 
-  isLogin(): Boolean {
+  isLogin(): boolean {
     return this.cookieService.check('id_token');
   }
 
@@ -47,9 +46,8 @@ export class AuthService {
     const token = this.cookieService.get('id_token');
     if (token) {
       return 'Bearer ' + token;
-    }
-    else {
-      undefined;
+    } else {
+      return null;
     }
   }
 }
