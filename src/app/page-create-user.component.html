@@ -1,0 +1,48 @@
+<app-layout>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fxFlex.lg="30" fxFlex.md="40" fxFlex.sm="60" fxFlex.xs="90" class="create-user-wrap">
+      <div style="width: 100%;text-align: center">
+        <img src="/assets/icons/icon-72x72.png">
+      </div>
+      <h1 class="create-user-title">アカウント作成</h1>
+      <form>
+        <mat-form-field appearance="outline" class="create-user">
+          <mat-label>名前</mat-label>
+          <input [(ngModel)]="user.name"
+                 matInput
+                 placeholder="名前"
+                 name="userName"
+                 type="text"
+                 autofocus>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="create-user">
+          <mat-label>メールアドレス</mat-label>
+          <input  [(ngModel)]="user.email"
+                  matInput
+                  placeholder="メールアドレス"
+                  name="email"
+                  type="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="create-user">
+          <mat-label>パスワード</mat-label>
+          <input [(ngModel)]="user.password"
+                 matInput
+                 placeholder="パスワード"
+                 name="password"
+                 type="password">
+        </mat-form-field>
+        <button aria-label="作成"
+                color="primary"
+                mat-button
+                mat-raised-button
+                type="submit"
+                class="create-user-button">
+          作成
+        </button>
+      </form>
+      <p class="create-user-copy">
+        ©茶葉のあまみ 2019.
+      </p>
+    </div>
+  </div>
+</app-layout>

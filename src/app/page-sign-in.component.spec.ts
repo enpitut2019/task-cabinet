@@ -18,7 +18,7 @@ describe('PageSignInComponent', () => {
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       providers: [ CookieService ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

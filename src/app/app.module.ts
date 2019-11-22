@@ -29,6 +29,8 @@ import { PageTopComponent } from './page-top.component';
 import { PageSignInComponent } from './page-sign-in.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { PageCreateUserComponent } from './page-create-user.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { CookieService } from 'ngx-cookie-service';
     LayoutComponent,
     PageTopComponent,
     PageSignInComponent,
+    PageCreateUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { CookieService } from 'ngx-cookie-service';
     MatGridListModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    FlexLayoutModule,
   ],
   providers: [
     DatePipe,
