@@ -1,7 +1,7 @@
 <app-layout>
   <div fxLayout="row" fxLayoutAlign="center">
     <div fxFlex.lg="30" fxFlex.md="40" fxFlex.sm="60" fxFlex.xs="90" class="create-user-wrap">
-      <div style="width: 100%;text-align: center">
+      <div class="create-user-logo">
         <img src="/assets/icons/icon-72x72.png">
       </div>
       <h1 class="create-user-title">アカウント作成</h1>
@@ -21,7 +21,7 @@
                   matInput
                   placeholder="メールアドレス"
                   name="email"
-                  type="email">
+                  type="text">
         </mat-form-field>
         <mat-form-field appearance="outline" class="create-user">
           <mat-label>パスワード</mat-label>
