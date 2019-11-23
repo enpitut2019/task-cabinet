@@ -2,10 +2,10 @@
   <div fxLayout="row" fxLayoutAlign="center">
     <div fxFlex.lg="30" fxFlex.md="40" fxFlex.sm="60" fxFlex.xs="90" class="create-user-wrap">
       <div class="create-user-logo">
-        <img src="/assets/icons/icon-72x72.png">
+        <img src="/assets/img/logo-ex1.png" style="width: 72px">
       </div>
       <h1 class="create-user-title">アカウント作成</h1>
-      <form>
+      <form (ngSubmit)="onSubmit([name, email, password])">
         <mat-form-field appearance="outline" class="create-user">
           <mat-label>名前</mat-label>
           <input [(ngModel)]="user.name"
@@ -13,26 +13,79 @@
                  placeholder="名前"
                  name="userName"
                  type="text"
-                 autofocus>
+                 autofocus
+                 checkPattern="user-name"
+                 #name="ngModel"
+                 required
+                 minlength="2"
+                 maxlength="30"
+                 autocomplete
+                 >
         </mat-form-field>
+        <div *ngIf="name.invalid && (name.touched || isSubmitted)"
+             class="alert alert-danger create-user-alert">
+          <mat-error *ngIf="name.errors.required">
+            必須の項目です。
+          </mat-error>
+          <mat-error *ngIf="name.errors.minlength">
+            名前は2文字以上で設定してください。
+          </mat-error>
+          <mat-error *ngIf="name.errors.maxlength">
+            名前は30文字以下で設定してください。
+          </mat-error>
+          <mat-error *ngIf="name.errors.forbiddenName">
+            特殊文字( & @ ^ ( ) [ ] {{'{}'}} . ? + * | \ ' " )と空白は使用しないでください。
+          </mat-error>
+        </div>
         <mat-form-field appearance="outline" class="create-user">
           <mat-label>メールアドレス</mat-label>
           <input  [(ngModel)]="user.email"
                   matInput
                   placeholder="メールアドレス"
                   name="email"
-                  type="text">
+                  type="text"
+                  autocomplete
+                  #email="ngModel"
+                  checkPattern="email"
+                  required
+          >
         </mat-form-field>
+        <div *ngIf="email.invalid && (email.touched || isSubmitted)"
+             class="alert alert-danger create-user-alert">
+          <mat-error *ngIf="email.errors.required">
+            必須の項目です。
+          </mat-error>
+          <mat-error *ngIf="email.errors.forbiddenName">
+            有効なメールアドレスを入力してください。
+          </mat-error>
+        </div>
         <mat-form-field appearance="outline" class="create-user">
           <mat-label>パスワード</mat-label>
           <input [(ngModel)]="user.password"
                  matInput
                  placeholder="パスワード"
                  name="password"
-                 type="password">
+                 type="password"
+                 autocomplete
+                 #password="ngModel"
+                 required
+                 minlength="5"
+                 maxlength="30">
         </mat-form-field>
+        <div *ngIf="password.invalid && (password.touched || isSubmitted)"
+             class="alert alert-danger create-user-alert">
+          <mat-error *ngIf="password.errors.required">
+            必須の項目です。
+          </mat-error>
+          <mat-error *ngIf="password.errors.minlength">
+           パスワード名前は5文字以上で設定してください。
+          </mat-error>
+          <mat-error *ngIf="password.errors.maxlength">
+            パスワードは30文字以下で設定してください。
+          </mat-error>
+        </div>
         <button aria-label="作成"
-                color="primary"
+                color="accent"
                 mat-button
                 mat-raised-button
                 type="submit"

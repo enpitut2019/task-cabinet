@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'add', component: PageTaskAddComponent },
   { path: '', component: PageTopComponent },
   { path: 'sign-in', component: PageSignInComponent },
-  { path: 'create-user', component: PageCreateUserComponent },
+  { path: 'sign-up', component: PageCreateUserComponent },
 ];
 
 @NgModule({

@@ -31,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { PageCreateUserComponent } from './page-create-user.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CheckPatternDirective } from './shared/check-pattern.directive';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     PageTopComponent,
     PageSignInComponent,
     PageCreateUserComponent,
+    CheckPatternDirective
   ],
   imports: [
     BrowserModule,

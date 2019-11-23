@@ -13,10 +13,21 @@ export class PageCreateUserComponent implements OnInit {
     password: '',
     name: ''
   };
+  isSubmitted = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit(params: Array<any>) {
+    this.isSubmitted = true;
+    for (const param of params) {
+      if (param.invalid) {
+        return;
+      }
+    }
+    alert('submit!');
   }
 
 }
