@@ -2,11 +2,11 @@ import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn } from '@angular
 import { Directive, Input } from '@angular/core';
 
 @Directive({
-  selector: '[checkPattern]',
+  selector: '[appCheckPattern]',
   providers: [{provide: NG_VALIDATORS, useExisting: CheckPatternDirective, multi: true}]
 })
 export class CheckPatternDirective implements Validator {
-  @Input('checkPattern') validationType: string;
+  @Input('appCheckPattern') validationType: string;
 
   validate(control: AbstractControl): {[key: string]: any} | null {
     switch (this.validationType) {
