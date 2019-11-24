@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from './models/login';
 import { AuthService } from './services/auth.service';
+import { AlertService } from './services/alert.service';
 
 @Component({
   selector: 'app-page-sign-in',
@@ -18,16 +19,12 @@ export class PageSignInComponent implements OnInit {
   };
   errorMessage = '';
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private alertService: AlertService) { }
 
   ngOnInit() {
     this.email = '';
     this.password = '';
 
-  }
-
-  closeAlert() {
-    this.errorMessage = '';
   }
 
   onSubmit() {
@@ -37,7 +34,7 @@ export class PageSignInComponent implements OnInit {
       })
       .catch((err) => {
         console.error(err);
-        this.errorMessage = 'メールアドレスとパスワードに間違いがないか確認してください。';
+        this.alertService.showErrorAlert('メールアドレスとパスワードに間違いがないか確認してください。');
       });
   }
 }

@@ -11,9 +11,11 @@ export class CheckPatternDirective implements Validator {
   validate(control: AbstractControl): {[key: string]: any} | null {
     switch (this.validationType) {
       case 'user-name':
-        return forbiddenNameValidator(new RegExp(/^(?!.*[\&\@\^\(\)\[\]\{\}\.\?\+\*\|\\\'\"\s]).*$/, 'i'))(control);
+        return forbiddenNameValidator(new RegExp(/^(?!.*[\&\@\^\(\)\[\]\{\}\.\?\+\*\|\\\'\"\s]).*$/))(control);
       case 'email':
-        return forbiddenNameValidator(new RegExp(/\S+@\S+\.\S+/, 'i'))(control);
+        return forbiddenNameValidator(new RegExp(/\S+@\S+\.\S+/))(control);
+      case 'password':
+        return forbiddenNameValidator(new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/))(control);
     }
   }
 }

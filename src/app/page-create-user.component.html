@@ -68,6 +68,7 @@
                  type="password"
                  autocomplete
                  #password="ngModel"
+                 appCheckPattern="password"
                  required
                  minlength="5"
                  maxlength="30">
@@ -82,6 +83,9 @@
           </mat-error>
           <mat-error *ngIf="password.errors.maxlength">
             パスワードは30文字以下で設定してください。
+          </mat-error>
+          <mat-error *ngIf="password.errors.forbiddenName">
+            パスワードは英数字の大文字/小文字/数字を含む必要があります。
           </mat-error>
         </div>
         <button aria-label="作成"

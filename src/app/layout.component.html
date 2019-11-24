@@ -13,5 +13,23 @@
   </mat-toolbar>
 </header>
 <main>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div *ngIf="this.alertService.getErrorAlert() !== ''"
+         class="alert alert-danger" role="alert"
+         fxFlex.lg="70" fxFlex.md="60" fxFlex.sm="70" fxFlex.xs="95">
+      <button type="button" class="close-alert" (click)="this.alertService.closeErrorAlert()">×</button>
+      <i class="material-icons">error</i>
+      {{ this.alertService.getErrorAlert() }}
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div *ngIf="this.alertService.getSuccessAlert() !== ''"
+         class="alert alert-success" role="alert"
+         fxFlex.lg="70" fxFlex.md="60" fxFlex.sm="70" fxFlex.xs="95">
+      <button type="button" class="close-alert" (click)="this.alertService.closeSuccessAlert()">×</button>
+      <i class="material-icons">info</i>
+      {{ this.alertService.getSuccessAlert() }}
+    </div>
+  </div>
   <ng-content></ng-content>
 </main>
