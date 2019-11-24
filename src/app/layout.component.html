@@ -8,7 +8,10 @@
       <button mat-button color="warn" class="right" (click)="pushLogout()">ログアウト</button>
     </ng-template>
     <ng-template #login>
-      <button mat-button color="primary" class="right" (click)="pushLogin()">ログイン</button>
+      <div class="right">
+        <button mat-button color="primary" routerLink="/sign-in">ログイン</button>
+        <button mat-button color="primary" routerLink="/sign-up">サインアップ</button>
+      </div>
     </ng-template>
   </mat-toolbar>
 </header>

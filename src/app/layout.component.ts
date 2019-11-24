@@ -16,10 +16,6 @@ export class LayoutComponent implements OnInit {
     this.alertService.hideAlert();
   }
 
-  pushLogin() {
-    this.router.navigate(['sign-in']);
-  }
-
   pushLogout() {
     this.authService.logout();
     this.router.navigate(['']);

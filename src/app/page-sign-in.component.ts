@@ -11,20 +11,17 @@ import { AlertService } from './services/alert.service';
 })
 export class PageSignInComponent implements OnInit {
 
-  email: string;
-  password: string;
   login: Login = {
     email: '',
     password: '',
   };
-  errorMessage = '';
 
   constructor(private router: Router, private authService: AuthService, private alertService: AlertService) { }
 
   ngOnInit() {
-    this.email = '';
-    this.password = '';
-
+    if (this.authService.isLogin()) {
+      this.router.navigate(['task']);
+    }
   }
 
   onSubmit() {
