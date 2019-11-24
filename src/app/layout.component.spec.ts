@@ -5,6 +5,7 @@ import { LayoutComponent } from './layout.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CookieService } from 'ngx-cookie-service';
+import { AlertService } from './services/alert.service';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -15,7 +16,7 @@ describe('LayoutComponent', () => {
       declarations: [ LayoutComponent ],
       imports: [ RouterTestingModule, HttpClientTestingModule ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      providers: [ CookieService ]
+      providers: [ CookieService, AlertService ]
     })
     .compileComponents();
   }));

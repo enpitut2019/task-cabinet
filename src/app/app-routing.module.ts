@@ -4,6 +4,7 @@ import { PageTaskComponent } from './page-task.component';
 import { PageTaskAddComponent } from './page-task-add.component';
 import { PageTopComponent } from './page-top.component';
 import { PageSignInComponent } from './page-sign-in.component';
+import { PageCreateUserComponent } from './page-create-user.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'add', component: PageTaskAddComponent },
   { path: '', component: PageTopComponent },
   { path: 'sign-in', component: PageSignInComponent },
+  { path: 'sign-up', component: PageCreateUserComponent },
 ];
 
 @NgModule({

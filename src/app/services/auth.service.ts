@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as moment from 'moment';
 import { CookieService } from 'ngx-cookie-service';
 
 import { Login } from '../models/login';
 import { environment } from '../../environments/environment';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +33,27 @@ export class AuthService {
         throw err;
       }
     );
+  }
+
+  public signUp(user: User): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post(`${environment.apiUrl}/tcs/user`, user, httpOptions)
+      .toPromise()
+      .then((result: any) => {
+        if (result.result !== undefined && result.result.id !== undefined) {
+          return result.result;
+        } else {
+          console.error(result);
+          throw new Error('Fail to save user.');
+        }
+      }).catch((err: any) => {
+          throw err;
+        }
+      );
   }
 
   logout() {
