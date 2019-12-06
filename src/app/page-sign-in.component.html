@@ -1,31 +1,44 @@
 <app-layout>
-  <form (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <input [(ngModel)]="login.email"
-             autocomplete
-             autofocus
-             matInput
-             name="email"
-             placeholder="メールアドレス"
-             required
-             type="text">
-    </mat-form-field>
-    <mat-form-field>
-      <input [(ngModel)]="login.password"
-             autocomplete
-             matInput
-             name="password"
-             placeholder="パスワード"
-             required
-             type="password">
-    </mat-form-field>
-    <button aria-label="ログイン"
-            color="accent"
-            mat-button
-            mat-raised-button
-            type="submit"
-            class="login">
-      ログイン
-    </button>
-  </form>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fxFlex.lg="30" fxFlex.md="40" fxFlex.sm="60" fxFlex.xs="90" class="wrap">
+      <div class="logo">
+        <img src="/assets/img/logo-ex1.png" style="width: 72px">
+      </div>
+      <h1 class="title">サインイン</h1>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="sign-in">
+          <mat-label>メールアドレス</mat-label>
+          <input [(ngModel)]="login.email"
+                 autocomplete
+                 autofocus
+                 matInput
+                 name="email"
+                 placeholder="メールアドレス"
+                 required
+                 type="text">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="sign-in">
+          <mat-label>パスワード</mat-label>
+          <input [(ngModel)]="login.password"
+                 autocomplete
+                 matInput
+                 name="password"
+                 placeholder="パスワード"
+                 required
+                 type="password">
+        </mat-form-field>
+        <button aria-label="ログイン"
+                color="accent"
+                mat-button
+                mat-raised-button
+                type="submit"
+                class="login">
+          ログイン
+        </button>
+      </form>
+      <p class="create-user-copy">
+        ©茶葉のあまみ 2019.
+      </p>
+    </div>
+  </div>
 </app-layout>

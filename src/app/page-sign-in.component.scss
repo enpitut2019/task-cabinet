@@ -1,9 +1,40 @@
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
+.sign-in {
+  margin-bottom: -0.75em;
+  width: 100%;
 }
 
-button.login {
-  margin-top: 1rem;
+.login {
+  margin-top: 2em;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.wrap {
+  margin-top: 8vh;
+}
+
+.copy {
+  color: rgba(0, 0, 0, 0.54);
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  margin-top: 2em;
+}
+
+.logo {
+  text-align: center;
+  width: 100%;
 }
