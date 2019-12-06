@@ -11,11 +11,21 @@ import { DatePipe } from '@angular/common';
 export class PageTaskComponent implements OnInit {
 
   taskList: Task[] = [];
+  isSubscribing: boolean;
 
   constructor(private taskService: TaskService, private datePipe: DatePipe) { }
 
   ngOnInit() {
     this.updateTaskList();
+    this.isSubscribing = false;
+  }
+
+  onSubscribe() {
+    this.isSubscribing = true;
+  }
+
+  onUnsubscribe() {
+    this.isSubscribing = false;
   }
 
   doneTask(task: Task) {
