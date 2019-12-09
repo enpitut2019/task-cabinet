@@ -3,7 +3,7 @@
     <span routerLink="/" class="service-icon">
       Task Cabinet
     </span>
-    <div *ngIf="this.authService.isLogin() === true; then logout; else login"></div>
+    <div *ngIf="isLoggedIn(); then logout; else login"></div>
     <ng-template #logout>
       <button mat-button color="warn" class="right" (click)="pushLogout()">ログアウト</button>
     </ng-template>
@@ -17,21 +17,21 @@
 </header>
 <main>
   <div fxLayout="row" fxLayoutAlign="center">
-    <div *ngIf="this.alertService.getErrorAlert() !== ''"
+    <div *ngIf="getErrorAlert() !== ''"
          class="alert alert-danger" role="alert"
          fxFlex.lg="70" fxFlex.md="60" fxFlex.sm="70" fxFlex.xs="95">
-      <button type="button" class="close-alert" (click)="this.alertService.closeErrorAlert()">×</button>
+      <button type="button" class="close-alert" (click)="closeErrorAlert()">×</button>
       <i class="material-icons">error</i>
-      {{ this.alertService.getErrorAlert() }}
+      {{ getErrorAlert() }}
     </div>
   </div>
   <div fxLayout="row" fxLayoutAlign="center">
-    <div *ngIf="this.alertService.getSuccessAlert() !== ''"
+    <div *ngIf="getSuccessAlert() !== ''"
          class="alert alert-success" role="alert"
          fxFlex.lg="70" fxFlex.md="60" fxFlex.sm="70" fxFlex.xs="95">
-      <button type="button" class="close-alert" (click)="this.alertService.closeSuccessAlert()">×</button>
+      <button type="button" class="close-alert" (click)="closeSuccessAlert()">×</button>
       <i class="material-icons">info</i>
-      {{ this.alertService.getSuccessAlert() }}
+      {{ getSuccessAlert() }}
     </div>
   </div>
   <ng-content></ng-content>
