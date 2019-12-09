@@ -3,6 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageTaskComponent } from './page-task.component';
 import { DatePipe } from '@angular/common';
+import { TaskService } from './task.service';
+import { of } from 'rxjs';
+import { Task } from './task';
 
 describe('PageTaskComponent', () => {
   let component: PageTaskComponent;
@@ -12,7 +15,16 @@ describe('PageTaskComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ PageTaskComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      providers: [ DatePipe ],
+      providers: [
+        DatePipe,
+        {
+          provide: TaskService,
+          useValue: {
+            doneTask: (task: Task) => of(task),
+            getTaskListOrderByAsap: () => of([]),
+          },
+        },
+      ],
     })
     .compileComponents();
   }));

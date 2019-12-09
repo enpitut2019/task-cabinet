@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { PageTaskAddComponent } from './page-task-add.component';
+import { TaskService } from './task.service';
+import { Task } from './task';
+import { of } from 'rxjs';
 
 describe('PageTaskAddComponent', () => {
   let component: PageTaskAddComponent;
@@ -24,6 +27,14 @@ describe('PageTaskAddComponent', () => {
         MatSliderModule,
         BrowserAnimationsModule,
         RouterTestingModule,
+      ],
+      providers: [
+        {
+          provide: TaskService,
+          useValue: {
+            addTask: (task: Task) => of(task),
+          },
+        },
       ],
     })
     .compileComponents();
