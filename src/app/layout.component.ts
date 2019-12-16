@@ -16,8 +16,29 @@ export class LayoutComponent implements OnInit {
     this.alertService.hideAlert();
   }
 
+  isLoggedIn(): boolean {
+    return this.authService.isLogin();
+  }
+
   pushLogout() {
     this.authService.logout();
     this.router.navigate(['']);
   }
+
+  getErrorAlert(): string {
+    return this.alertService.getErrorAlert();
+  }
+
+  closeErrorAlert() {
+    this.alertService.closeErrorAlert();
+  }
+
+  getSuccessAlert(): string {
+    return this.alertService.getSuccessAlert();
+  }
+
+  closeSuccessAlert() {
+    this.alertService.closeSuccessAlert();
+  }
+
 }
