@@ -3,6 +3,9 @@ import { Task } from './task';
 import { Observable, of } from 'rxjs';
 import { MOCK_TASK_LIST } from './mock-task-list';
 import { map, tap } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
+import { AuthService } from './services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +14,7 @@ export class TaskService {
 
   private readonly taskList: Task[];
 
-  constructor() {
+  constructor(private http: HttpClient, private authService: AuthService) {
     this.taskList = MOCK_TASK_LIST;
   }
 
@@ -29,7 +32,25 @@ export class TaskService {
   }
 
   getTaskList(): Observable<Task[]> {
-    return of(this.taskList.slice());
+    return this.http.get(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task-list?all=true`, {
+      headers: new HttpHeaders({
+        Authorization: this.authService.getAuthHeader(),
+        'Content-Type': 'application/json',
+      }),
+    }).pipe(map((response: any): Task[] => {
+      if (response.result === undefined) {
+        throw new Error('fail to get task list.');
+      }
+
+      return response.result.map((task: any): Task => {
+        return {
+          id: task.id,
+          name: task.name,
+          deadline: new Date(task.deadline),
+          estimate: task.estimate,
+        };
+      });
+    }));
   }
 
   getTaskListOrderByAsap(): Observable<Task[]> {
