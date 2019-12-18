@@ -19,7 +19,7 @@ export class TaskService {
   }
 
   addTask(task: TaskRequest): Observable<Task> {
-    return this.http.post(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task`, task,{
+    return this.http.post(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task`, task, {
       headers: new HttpHeaders({
         Authorization: this.authService.getAuthHeader(),
         'Content-Type': 'application/json',
