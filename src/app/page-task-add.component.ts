@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import uuid from 'uuid';
-import { Task } from './task';
+import { Task, TaskRequest } from './task';
 import { TaskService } from './task.service';
+import { AlertService } from './services/alert.service';
 
 @Component({
   selector: 'app-page-task-add',
@@ -17,10 +18,16 @@ export class PageTaskAddComponent implements OnInit {
     deadline: new Date(),
     estimate: 1,
   };
+  taskRequest: TaskRequest = {
+    name: '',
+    deadline: 0,
+    estimate: 1,
+  };
 
   constructor(
     private router: Router,
     private taskService: TaskService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -30,9 +37,21 @@ export class PageTaskAddComponent implements OnInit {
     if (this.task.name === '') {
       return;
     }
-    this.taskService.addTask(this.task).subscribe(() => {
-      this.router.navigate(['task']);
-    });
+    this.taskRequest.name = this.task.name;
+    this.taskRequest.estimate = this.task.estimate;
+    this.taskRequest.deadline = new Date(this.task.deadline).getTime();
+    this.taskService.addTask(this.taskRequest)
+      .subscribe(
+        () => {
+          this.router.navigate(['task']);
+        }, (error) => {
+          if (error.status === 400) {
+            this.alertService.showErrorAlert('バラメータを確認してください。');
+          } else {
+            this.alertService.showErrorAlert('タスクの追加に失敗しました。');
+            console.error(error);
+          }
+        });
   }
 
 }

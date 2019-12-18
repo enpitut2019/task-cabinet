@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from './task';
+import { Task, TaskRequest } from './task';
 import { Observable, of } from 'rxjs';
 import { MOCK_TASK_LIST } from './mock-task-list';
 import { map, tap } from 'rxjs/operators';
@@ -18,8 +18,23 @@ export class TaskService {
     this.taskList = MOCK_TASK_LIST;
   }
 
-  addTask(task: Task): Observable<Task> {
-    return of(task).pipe(tap((t: Task) => { this.taskList.push(t); }));
+  addTask(task: TaskRequest): Observable<Task> {
+    return this.http.post(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task`, task,{
+      headers: new HttpHeaders({
+        Authorization: this.authService.getAuthHeader(),
+        'Content-Type': 'application/json',
+      }),
+    }).pipe(map((response: any): Task => {
+      if (response.result === undefined) {
+        throw new Error('fail to get task list.');
+      }
+      return {
+        id: response.result.id,
+        name: response.result.name,
+        deadline: new Date(response.result.deadline),
+        estimate: response.result.estimate,
+      };
+    }));
   }
 
   doneTask(task: Task): Observable<Task> {
