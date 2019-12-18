@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4200'  // Proxyでサーバーに転送する(CORS対策)
+  apiUrl: 'http://localhost:4200',  // Proxyでサーバーに転送する(CORS対策)
+  vapIdPublicKey: 'YourSecretKey' // TODO: 機密情報の扱い
 };
 
 /*

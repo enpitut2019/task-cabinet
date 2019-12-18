@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://104.197.246.60:3000'
+  apiUrl: 'https://www.tcs-service.megurumokke.org',
+  vapIdPublicKey: 'YourSecretKey' // TODO: 機密情報の扱い
 };
