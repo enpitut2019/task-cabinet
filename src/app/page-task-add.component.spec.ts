@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { PageTaskAddComponent } from './page-task-add.component';
-import { TaskService } from './task.service';
-import { Task } from './task';
-import { of } from 'rxjs';
+import { AlertService } from './services/alert.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CookieService } from 'ngx-cookie-service';
 
 describe('PageTaskAddComponent', () => {
   let component: PageTaskAddComponent;
@@ -27,15 +27,9 @@ describe('PageTaskAddComponent', () => {
         MatSliderModule,
         BrowserAnimationsModule,
         RouterTestingModule,
+        HttpClientTestingModule,
       ],
-      providers: [
-        {
-          provide: TaskService,
-          useValue: {
-            addTask: (task: Task) => of(task),
-          },
-        },
-      ],
+      providers: [AlertService, CookieService],
     })
     .compileComponents();
   }));
