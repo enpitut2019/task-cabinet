@@ -70,6 +70,30 @@ export class DeviceService {
     }));
   }
 
+  checkIsSubscribing(): Observable<boolean> {
+    return new Observable((observer => {
+      this.getKey()
+        .then(device => {
+          this.http.post(`${environment.apiUrl}/tcs/users/${this.authService.getUserId()}/check-device`, device, {
+            headers: new HttpHeaders({
+              Authorization: this.authService.getAuthHeader(),
+              'Content-Type': 'application/json',
+            }),
+          }).subscribe((response: any) => {
+            if (response.result === undefined) {
+              observer.error(new Error('Fail to post device information'));
+            }
+            console.log(response);
+            observer.next(response.result.is_exist === 1);
+          }, err => {
+            observer.error(err);
+          });
+        }).catch(err => {
+        observer.error(err);
+      });
+    }));
+  }
+
   getKey(): Promise<Device> {
     return this.swPush.requestSubscription({serverPublicKey: environment.vapIdPublicKey})
       .then(sub => {

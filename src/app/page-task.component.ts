@@ -24,7 +24,14 @@ export class PageTaskComponent implements OnInit {
 
   ngOnInit() {
     this.updateTaskList();
-    this.isSubscribing = false;
+    this.deviceService.checkIsSubscribing().subscribe(
+      isSub => {
+        this.isSubscribing = isSub;
+      }, err => {
+        console.error(err);
+        this.isSubscribing = false;
+      }
+    );
   }
 
   onSubscribe() {
