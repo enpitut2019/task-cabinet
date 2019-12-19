@@ -6,6 +6,12 @@ import { DatePipe } from '@angular/common';
 import { TaskService } from './task.service';
 import { of } from 'rxjs';
 import { Task } from './task';
+import { ServiceWorkerModule, SwPush } from '@angular/service-worker';
+import { DeviceService } from './services/device.service';
+import { environment } from '../environments/environment';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CookieService } from 'ngx-cookie-service';
+import { AlertService } from './services/alert.service';
 
 describe('PageTaskComponent', () => {
   let component: PageTaskComponent;
@@ -17,6 +23,10 @@ describe('PageTaskComponent', () => {
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       providers: [
         DatePipe,
+        DeviceService,
+        SwPush,
+        CookieService,
+        AlertService,
         {
           provide: TaskService,
           useValue: {
@@ -25,8 +35,12 @@ describe('PageTaskComponent', () => {
           },
         },
       ],
+      imports: [
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        HttpClientTestingModule
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

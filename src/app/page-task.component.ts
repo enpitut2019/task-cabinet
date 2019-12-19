@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from './task';
 import { TaskService } from './task.service';
 import { DatePipe } from '@angular/common';
+import { DeviceService } from './services/device.service';
+import { AlertService } from './services/alert.service';
 
 @Component({
   selector: 'app-page-task',
@@ -13,19 +15,43 @@ export class PageTaskComponent implements OnInit {
   taskList: Task[] = [];
   isSubscribing: boolean;
 
-  constructor(private taskService: TaskService, private datePipe: DatePipe) { }
+  constructor(
+    private taskService: TaskService,
+    private datePipe: DatePipe,
+    private deviceService: DeviceService,
+    public alertService: AlertService
+  ) { }
 
   ngOnInit() {
     this.updateTaskList();
-    this.isSubscribing = false;
+    this.deviceService.checkIsSubscribing().subscribe(
+      isSub => {
+        this.isSubscribing = isSub;
+      }, err => {
+        console.error(err);
+        this.isSubscribing = false;
+      }
+    );
   }
 
   onSubscribe() {
-    this.isSubscribing = true;
+    this.deviceService.subscribePush().subscribe(
+      () => {
+        this.isSubscribing = true;
+        this.alertService.showSuccessAlert('通知をONに設定しました。');
+      }, err => {
+        this.alertService.showErrorAlert('通知の設定に失敗しました。');
+      });
   }
 
   onUnsubscribe() {
-    this.isSubscribing = false;
+    this.deviceService.unSubscribePush().subscribe(
+      () => {
+        this.isSubscribing = false;
+        this.alertService.showSuccessAlert('通知をOFFに設定しました。');
+      }, err => {
+        this.alertService.showErrorAlert('通知の設定に失敗しました。');
+      });
   }
 
   doneTask(task: Task) {
