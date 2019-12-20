@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1576826026573,
+  "timestamp": 1576827467299,
   "index": "/task-cabinet/index.html",
   "assetGroups": [
     {
@@ -43,14 +43,14 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/task-cabinet/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/task-cabinet/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/task-cabinet/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/task-cabinet/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/task-cabinet/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/task-cabinet/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/task-cabinet/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/task-cabinet/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/task-cabinet/assets/icons/icon-128x128.png": "401f53d5dc820930b920073ad9d5c87e5a39ed25",
+    "/task-cabinet/assets/icons/icon-144x144.png": "0a47a50ec5dce0794ffb12ffb4d08dbe2506e6e9",
+    "/task-cabinet/assets/icons/icon-152x152.png": "cdbbfa754e2f7b1f22797f78ac1b1760609503dc",
+    "/task-cabinet/assets/icons/icon-192x192.png": "e7b309f3e334f0eed34677660179fb116cbf11cd",
+    "/task-cabinet/assets/icons/icon-384x384.png": "7c5d28a1efb25ef9321220d859432e8ca601071e",
+    "/task-cabinet/assets/icons/icon-512x512.png": "8ae85e3b9723d491b140969e40a04bc98fc7a273",
+    "/task-cabinet/assets/icons/icon-72x72.png": "23f82f3fa050394d02ecf2c8bccb123f5ea9f2e3",
+    "/task-cabinet/assets/icons/icon-96x96.png": "b4cedb0db735d1bdf0b933bd76e800e33efd3627",
     "/task-cabinet/assets/img/logo-ex1.png": "c6eba4abfe8d97369380cf2e19257879ae3175f3",
     "/task-cabinet/assets/img/top-bg.png": "ea87519ed8c9aa2f6e140be27fe4502b2ba896a4",
     "/task-cabinet/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
