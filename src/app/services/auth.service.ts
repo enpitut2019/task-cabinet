@@ -64,7 +64,8 @@ export class AuthService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         Authorization: this.getAuthHeader()
-      })
+      }),
+      withCredentials: true
     };
     this.http.put(`${environment.apiUrl}/tcs/user/${this.getUserId()}/logout`, null, httpOptions)
       .toPromise()
