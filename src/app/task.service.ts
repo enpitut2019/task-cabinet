@@ -32,6 +32,8 @@ export class TaskService {
         id: response.result.id,
         name: response.result.name,
         deadline: new Date(response.result.deadline),
+        finishedAt: response.result.finished_at ?
+          new Date(response.result.finished_at) : null,
         estimate: response.result.estimate,
       };
     }));
@@ -70,6 +72,7 @@ export class TaskService {
           id: task.id,
           name: task.name,
           deadline: new Date(task.deadline),
+          finishedAt: task.finished_at ? new Date(task.finished_at) : null,
           estimate: task.estimate,
         };
       });
@@ -77,8 +80,9 @@ export class TaskService {
   }
 
   getTaskListOrderByAsap(): Observable<Task[]> {
-    return this.getTaskList().pipe(map((t: Task[]) => {
-      return t.sort((t1: Task, t2: Task) => {
+    return this.getTaskList().pipe(map((taskList: Task[]) => {
+      const filteredList: Task[] = taskList.filter((task: Task) => task.finishedAt === null);
+      return filteredList.sort((t1: Task, t2: Task) => {
         return t1.deadline.valueOf() - t2.deadline.valueOf();
       });
     }));

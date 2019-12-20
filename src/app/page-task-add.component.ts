@@ -16,6 +16,7 @@ export class PageTaskAddComponent implements OnInit {
     id: uuid(),
     name: '',
     deadline: new Date(),
+    finishedAt: null,
     estimate: 1,
   };
   taskRequest: TaskRequest = {
