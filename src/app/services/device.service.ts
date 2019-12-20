@@ -28,7 +28,6 @@ export class DeviceService {
               Authorization: this.authService.getAuthHeader(),
               'Content-Type': 'application/json',
             }),
-            withCredentials: true
           }).subscribe((response: any) => {
             if (response.result === undefined) {
               observer.error(new Error('Fail to post device information'));
@@ -55,7 +54,6 @@ export class DeviceService {
               Authorization: this.authService.getAuthHeader(),
               'Content-Type': 'application/json',
             }),
-            withCredentials: true,
             body: device,
             observe: 'response'  // For get status
           }).subscribe((response: any) => {
@@ -81,7 +79,6 @@ export class DeviceService {
               Authorization: this.authService.getAuthHeader(),
               'Content-Type': 'application/json',
             }),
-            withCredentials: true
           }).subscribe((response: any) => {
             if (response.result === undefined) {
               observer.error(new Error('Fail to post device information'));

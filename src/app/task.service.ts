@@ -24,7 +24,6 @@ export class TaskService {
         Authorization: this.authService.getAuthHeader(),
         'Content-Type': 'application/json',
       }),
-      withCredentials: true
     }).pipe(map((response: any): Task => {
       if (response.result === undefined) {
         throw new Error('fail to get task list.');
@@ -63,7 +62,6 @@ export class TaskService {
         Authorization: this.authService.getAuthHeader(),
         'Content-Type': 'application/json',
       }),
-      withCredentials: true
     }).pipe(map((response: any): Task[] => {
       if (response.result === undefined) {
         throw new Error('fail to get task list.');
