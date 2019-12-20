@@ -57,6 +57,9 @@ export class PageTaskComponent implements OnInit {
   doneTask(task: Task) {
     this.taskService.doneTask(task).subscribe(() => {
       this.updateTaskList();
+    }, err => {
+      console.error(err);
+      this.alertService.showErrorAlert('タスクの完了に失敗しました。');
     });
   }
 
