@@ -2,6 +2,7 @@
   margin-right: auto;
   margin-left: auto;
   width: 80vw;
+  max-width: 80rem;
 }
 
 .top-section {
@@ -10,7 +11,7 @@
   background-image: url(../assets/img/top-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom center;
 }
 
 .service-description {
@@ -39,6 +40,7 @@
   font-family: "Poppins", sans-serif;
   color: #fff;
   margin-bottom: 57px;
+  max-width: 40rem;
 }
 
 .top-section.container {
@@ -54,6 +56,8 @@
   border-radius: .3rem;
   outline: none;
   border: 1px solid #74b03b;
+  margin-bottom: 1em;
+  margin-right: 1.5em;
 }
 
 .sign-up-button {
@@ -63,12 +67,11 @@
   line-height: 1.5;
   border-radius: .3rem;
   border: 1px solid white;
-  margin-left: 1.5em;
   background-color: #80bc46;
 }
 
 .top-footer {
-  padding: 130px 0 25px;
+  padding: 50px 0 25px;
 }
 
 .top-footer hr {
