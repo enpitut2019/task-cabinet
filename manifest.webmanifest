@@ -1,7 +1,7 @@
 {
   "name": "task-cabinet",
   "short_name": "task-cabinet",
-  "theme_color": "#1976d2",
+  "theme_color": "#538235",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/task-cabinet/",

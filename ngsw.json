@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1576827467299,
+  "timestamp": 1576991693479,
   "index": "/task-cabinet/index.html",
   "assetGroups": [
     {
@@ -10,11 +10,11 @@
       "urls": [
         "/task-cabinet/favicon.ico",
         "/task-cabinet/index.html",
-        "/task-cabinet/main-es2015.eb88fad4b6eee6a727c6.js",
-        "/task-cabinet/main-es5.eb88fad4b6eee6a727c6.js",
+        "/task-cabinet/main-es2015.1589cb55c32def0cbd23.js",
+        "/task-cabinet/main-es5.1589cb55c32def0cbd23.js",
         "/task-cabinet/manifest.webmanifest",
         "/task-cabinet/polyfills-es2015.fad558c78a34f48ae57e.js",
-        "/task-cabinet/polyfills-es5.39b0b4e8724a507ae676.js",
+        "/task-cabinet/polyfills-es5.741af51aaedba3064fa2.js",
         "/task-cabinet/runtime-es2015.ea093ca02a613b0bc093.js",
         "/task-cabinet/runtime-es5.ea093ca02a613b0bc093.js",
         "/task-cabinet/styles.d9dc716df0c684d997ec.css"
@@ -54,12 +54,12 @@
     "/task-cabinet/assets/img/logo-ex1.png": "c6eba4abfe8d97369380cf2e19257879ae3175f3",
     "/task-cabinet/assets/img/top-bg.png": "ea87519ed8c9aa2f6e140be27fe4502b2ba896a4",
     "/task-cabinet/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/task-cabinet/index.html": "18008b659313b496d41115df7cfc2035a3c14c91",
-    "/task-cabinet/main-es2015.eb88fad4b6eee6a727c6.js": "d313ab736f43134b8bcd6746c3b91c31ea13245e",
-    "/task-cabinet/main-es5.eb88fad4b6eee6a727c6.js": "67a782f25263ec61811282ebde93983866485e6d",
-    "/task-cabinet/manifest.webmanifest": "ec3e3bb677c535a7600fac2713beaf267eb192af",
+    "/task-cabinet/index.html": "f8fe1e2cbdb73129751fc7efd677423cd20a27c3",
+    "/task-cabinet/main-es2015.1589cb55c32def0cbd23.js": "6408f99d5e2618557133308f42d0a243f9396de7",
+    "/task-cabinet/main-es5.1589cb55c32def0cbd23.js": "5e111f450b5b28991375fbffe42b1bb496670140",
+    "/task-cabinet/manifest.webmanifest": "0685136c9019bd362c03765c1eacdde9b54e775e",
     "/task-cabinet/polyfills-es2015.fad558c78a34f48ae57e.js": "422e16b8bc38dfcc1092cd3222cdb4cf67a3070f",
-    "/task-cabinet/polyfills-es5.39b0b4e8724a507ae676.js": "97f3206053feea2cc211eeb02218b0b7c0200de3",
+    "/task-cabinet/polyfills-es5.741af51aaedba3064fa2.js": "97f3206053feea2cc211eeb02218b0b7c0200de3",
     "/task-cabinet/runtime-es2015.ea093ca02a613b0bc093.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/task-cabinet/runtime-es5.ea093ca02a613b0bc093.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/task-cabinet/styles.d9dc716df0c684d997ec.css": "26453d47ec36430b523ace93361172ee2488aa30",
