@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import uuid from 'uuid';
-import { Task, TaskRequest } from './task';
+import { Task } from './task';
 import { TaskService } from './task.service';
 import { AlertService } from './services/alert.service';
 
@@ -11,17 +10,12 @@ import { AlertService } from './services/alert.service';
   styleUrls: ['./page-task-edit.component.scss']
 })
 export class PageTaskEditComponent implements OnInit {
-  deadline: Date;
+
   task: Task = {
-    id: uuid(),
+    id: null,
     name: '',
     deadline: new Date(),
     finishedAt: null,
-    estimate: 1,
-  };
-  taskRequest: TaskRequest = {
-    name: '',
-    deadline: 0,
     estimate: 1,
   };
 
@@ -38,10 +32,16 @@ export class PageTaskEditComponent implements OnInit {
     if (this.task.name === '') {
       return;
     }
-    this.taskRequest.name = this.task.name;
-    this.taskRequest.estimate = this.task.estimate;
-    this.taskRequest.deadline = new Date(this.task.deadline).getTime();
-    this.taskService.addTask(this.taskRequest)
+
+    const task: Task = {
+      id: null,
+      name: this.task.name,
+      estimate: this.task.estimate,
+      deadline: new Date(this.task.deadline),
+      finishedAt: null,
+    };
+
+    this.taskService.addTask(task)
       .subscribe(
         () => {
           this.router.navigate(['task']);

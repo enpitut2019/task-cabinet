@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Task, TaskRequest } from './task';
-import { Observable, of } from 'rxjs';
-import { MOCK_TASK_LIST } from './mock-task-list';
-import { map, tap } from 'rxjs/operators';
+import { Task } from './task';
+import { Observable, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
@@ -12,14 +11,15 @@ import { AuthService } from './services/auth.service';
 })
 export class TaskService {
 
-  private readonly taskList: Task[];
-
   constructor(private http: HttpClient, private authService: AuthService) {
-    this.taskList = MOCK_TASK_LIST;
   }
 
-  addTask(task: TaskRequest): Observable<Task> {
-    return this.http.post(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task`, task, {
+  addTask(task: Task): Observable<Task> {
+    return this.http.post(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task`, {
+      name: task.name,
+      deadline: task.deadline.getTime(),
+      estimate: task.estimate,
+    }, {
       headers: new HttpHeaders({
         Authorization: this.authService.getAuthHeader(),
         'Content-Type': 'application/json',
@@ -31,6 +31,36 @@ export class TaskService {
       }
       return {
         id: response.result.id,
+        name: response.result.name,
+        deadline: new Date(response.result.deadline),
+        finishedAt: response.result.finished_at ?
+          new Date(response.result.finished_at) : null,
+        estimate: response.result.estimate,
+      };
+    }));
+  }
+
+  editTask(task: Task): Observable<Task> {
+    if (task.id === undefined || task.id === null) {
+      return throwError('task id must exists.');
+    }
+
+    return this.http.patch(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task/${task.id}`, {
+      name: task.name,
+      deadline: task.deadline.getTime(),
+      estimate: task.estimate,
+    }, {
+      headers: new HttpHeaders({
+        Authorization: this.authService.getAuthHeader(),
+        'Content-Type': 'application/json',
+      }),
+      withCredentials: true,
+    }).pipe(map((response: any): Task => {
+      if (response.result === undefined) {
+        throw new Error('fail to update task list.');
+      }
+      return {
+        id: task.id,
         name: response.result.name,
         deadline: new Date(response.result.deadline),
         finishedAt: response.result.finished_at ?
