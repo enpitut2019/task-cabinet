@@ -10,6 +10,7 @@ import { PageCreateUserComponent } from './page-create-user.component';
 const routes: Routes = [
   { path: 'task', component: PageTaskComponent },
   { path: 'add', component: PageTaskEditComponent },
+  { path: 'edit/:id', component: PageTaskEditComponent },
   { path: '', component: PageTopComponent },
   { path: 'sign-in', component: PageSignInComponent },
   { path: 'sign-up', component: PageCreateUserComponent },

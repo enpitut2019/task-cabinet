@@ -25,7 +25,11 @@
         <mat-progress-bar [value]="task.estimate"></mat-progress-bar>
       </mat-grid-tile>
     </mat-grid-list>
-    <div class="done-button-wrapper">
+    <div class="action-wrapper">
+      <a mat-button [routerLink]="['/edit', task.id]">
+        <mat-icon>edit</mat-icon>
+        <span>編集</span>
+      </a>
       <button mat-button (click)="doneTask(task)">
         <mat-icon>done</mat-icon>
         <span>完了</span>
