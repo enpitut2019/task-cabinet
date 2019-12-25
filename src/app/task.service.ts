@@ -87,6 +87,28 @@ export class TaskService {
     }));
   }
 
+  getTask(id: number): Observable<Task> {
+    return this.http.get(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task/${id}`, {
+      headers: new HttpHeaders({
+        Authorization: this.authService.getAuthHeader(),
+        'Content-Type': 'application/json',
+      }),
+      withCredentials: true
+    }).pipe(map((response: any): Task => {
+      if (response.result === undefined) {
+        throw new Error('fail to get task list.');
+      }
+      return {
+        id: response.result.id,
+        name: response.result.name,
+        deadline: new Date(response.result.deadline),
+        finishedAt: response.result.finished_at ?
+          new Date(response.result.finished_at) : null,
+        estimate: response.result.estimate,
+      };
+    }));
+  }
+
   getTaskList(): Observable<Task[]> {
     return this.http.get(`${environment.apiUrl}/tcs/user/${this.authService.getUserId()}/task-list?all=true`, {
       headers: new HttpHeaders({

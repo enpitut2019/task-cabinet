@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Task } from './task';
 import { TaskService } from './task.service';
 import { AlertService } from './services/alert.service';
+import { switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-page-task-edit',
@@ -11,21 +13,33 @@ import { AlertService } from './services/alert.service';
 })
 export class PageTaskEditComponent implements OnInit {
 
-  task: Task = {
-    id: null,
-    name: '',
-    deadline: new Date(),
-    finishedAt: null,
-    estimate: 1,
-  };
+  task: Task;
 
   constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private taskService: TaskService,
     private alertService: AlertService
   ) { }
 
   ngOnInit() {
+    this.route.paramMap.pipe(
+      switchMap((paramMap: ParamMap) => {
+        if (paramMap.has('id')) {
+          return this.taskService.getTask(parseInt(paramMap.get('id'), 10));
+        } else {
+          return of({
+            id: null,
+            name: '',
+            deadline: new Date(),
+            finishedAt: null,
+            estimate: 1,
+          });
+        }
+      })
+    ).subscribe((task: Task) => {
+      this.task = task;
+    });
   }
 
   submit() {
