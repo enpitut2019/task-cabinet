@@ -6,18 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { PageTaskAddComponent } from './page-task-add.component';
+import { PageTaskEditComponent } from './page-task-edit.component';
 import { AlertService } from './services/alert.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CookieService } from 'ngx-cookie-service';
 
 describe('PageTaskAddComponent', () => {
-  let component: PageTaskAddComponent;
-  let fixture: ComponentFixture<PageTaskAddComponent>;
+  let component: PageTaskEditComponent;
+  let fixture: ComponentFixture<PageTaskEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageTaskAddComponent ],
+      declarations: [ PageTaskEditComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       imports: [
         MatDatepickerModule,
@@ -35,7 +35,7 @@ describe('PageTaskAddComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageTaskAddComponent);
+    fixture = TestBed.createComponent(PageTaskEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

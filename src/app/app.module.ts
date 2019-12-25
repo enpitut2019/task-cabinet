@@ -20,7 +20,7 @@ import {
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import { PageTaskAddComponent } from './page-task-add.component';
+import { PageTaskEditComponent } from './page-task-edit.component';
 import { MatGridListModule } from '@angular/material';
 import { DatePipe } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -37,7 +37,7 @@ import { CheckPatternDirective } from './shared/check-pattern.directive';
   declarations: [
     AppComponent,
     PageTaskComponent,
-    PageTaskAddComponent,
+    PageTaskEditComponent,
     LayoutComponent,
     PageTopComponent,
     PageSignInComponent,

@@ -6,11 +6,11 @@ import { TaskService } from './task.service';
 import { AlertService } from './services/alert.service';
 
 @Component({
-  selector: 'app-page-task-add',
-  templateUrl: './page-task-add.component.html',
-  styleUrls: ['./page-task-add.component.scss']
+  selector: 'app-page-task-edit',
+  templateUrl: './page-task-edit.component.html',
+  styleUrls: ['./page-task-edit.component.scss']
 })
-export class PageTaskAddComponent implements OnInit {
+export class PageTaskEditComponent implements OnInit {
   deadline: Date;
   task: Task = {
     id: uuid(),
