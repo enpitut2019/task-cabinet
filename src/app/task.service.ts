@@ -40,7 +40,7 @@ export class TaskService {
     }));
   }
 
-  editTask(task: Task): Observable<Task> {
+  updateTask(task: Task): Observable<Task> {
     if (task.id === undefined || task.id === null) {
       return throwError('task id must exists.');
     }

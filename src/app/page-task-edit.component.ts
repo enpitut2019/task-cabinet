@@ -48,25 +48,39 @@ export class PageTaskEditComponent implements OnInit {
     }
 
     const task: Task = {
-      id: null,
+      id: this.task.id,
       name: this.task.name,
       estimate: this.task.estimate,
       deadline: new Date(this.task.deadline),
       finishedAt: null,
     };
 
-    this.taskService.addTask(task)
-      .subscribe(
-        () => {
+    if (this.task.id === null) {
+      this.taskService.addTask(task)
+        .subscribe(
+          () => {
+            this.router.navigate(['task']);
+          }, (error) => {
+            if (error.status === 400) {
+              this.alertService.showErrorAlert('バラメータを確認してください。');
+            } else {
+              this.alertService.showErrorAlert('タスクの追加に失敗しました。');
+              console.error(error);
+            }
+          });
+    } else {
+      this.taskService.updateTask(task)
+        .subscribe(() => {
           this.router.navigate(['task']);
         }, (error) => {
           if (error.status === 400) {
             this.alertService.showErrorAlert('バラメータを確認してください。');
           } else {
-            this.alertService.showErrorAlert('タスクの追加に失敗しました。');
+            this.alertService.showErrorAlert('タスクの更新に失敗しました。');
             console.error(error);
           }
         });
+    }
   }
 
 }
