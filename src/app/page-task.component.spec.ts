@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CookieService } from 'ngx-cookie-service';
 import { AlertService } from './services/alert.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PageTaskComponent', () => {
   let component: PageTaskComponent;
@@ -37,6 +38,7 @@ describe('PageTaskComponent', () => {
       ],
       imports: [
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        RouterTestingModule,
         HttpClientTestingModule
       ],
     })
