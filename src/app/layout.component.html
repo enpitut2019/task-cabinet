@@ -1,6 +1,6 @@
 <header>
   <mat-toolbar>
-    <span routerLink="/" class="service-icon">
+    <span [routerLink]="isLoggedIn() ? '/task' : '/'" class="service-icon">
       Task Cabinet
     </span>
     <div *ngIf="isLoggedIn(); then logout; else login"></div>
