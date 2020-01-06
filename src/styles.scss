@@ -1,4 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+$app-primary-color: (
+  50: #eaf0e7,
+  100: #cbdac2,
+  200: #a9c19a,
+  300: #87a872,
+  400: #6d9553,
+  500: #538235,
+  600: #4c7a30,
+  700: #426f28,
+  800: #396522,
+  900: #295216,
+  A100: #afff8e,
+  A200: #8bff5b,
+  A400: #66ff28,
+  A700: #54ff0e,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+$app-accent-color: (
+  50: #f8e0e4,
+  100: #edb3bb,
+  200: #e2808e,
+  300: #d64d61,
+  400: #cd263f,
+  500: #c4001d,
+  600: #be001a,
+  700: #b60015,
+  800: #af0011,
+  900: #a2000a,
+  A100: #ffcccd,
+  A200: #ff999b,
+  A400: #ff6669,
+  A700: #ff4d50,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+// Define the default theme (same as the example above).
+$app-primary: mat-palette($app-primary-color);
+$app-accent:  mat-palette($app-accent-color, 500, 300, 700);
+$app-theme:   mat-light-theme($app-primary, $app-accent);
+
+// Include the default theme styles.
+@include angular-material-theme($app-theme);
+
+// Define a custom typography config that overrides the font-family.
+$app-typography: mat-typography-config(
+  $font-family: 'Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;'
+);
+
+// Override the typography in the core CSS.
+@include mat-core($app-typography);
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
