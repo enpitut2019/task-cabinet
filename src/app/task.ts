@@ -5,9 +5,3 @@ export interface Task {
   finishedAt: Date | null;
   estimate: number;
 }
-
-export interface TaskRequest {
-  name: string;
-  deadline: number;
-  estimate: number;
-}

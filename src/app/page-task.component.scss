@@ -25,8 +25,12 @@ table {
   right: 1rem;
 }
 
-.done-button-wrapper {
+.action-wrapper {
   text-align: right;
+}
+
+.action-wrapper > [mat-button]:not(:first-child) {
+  margin-left: .5rem;
 }
 
 .spacer {
