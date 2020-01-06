@@ -82,11 +82,19 @@ $app-theme:   mat-light-theme($app-primary, $app-accent);
 // Include the default theme styles.
 @include angular-material-theme($app-theme);
 
+// Define a custom typography config that overrides the font-family.
+$app-typography: mat-typography-config(
+  $font-family: 'Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;'
+);
+
+// Override the typography in the core CSS.
+@include mat-core($app-typography);
+
 html, body {
   height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
