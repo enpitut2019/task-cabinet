@@ -4,6 +4,7 @@ import { TaskService } from './task.service';
 import { DatePipe } from '@angular/common';
 import { DeviceService } from './services/device.service';
 import { AlertService } from './services/alert.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-page-task',
@@ -14,6 +15,12 @@ export class PageTaskComponent implements OnInit {
 
   taskList: Task[] = [];
   isSubscribing: boolean;
+
+  orderTypesValue = 'asap';
+  orderTypes: { value: string, viewValue: string }[] = [
+    { value: 'asap', viewValue: '期限の近い順' },
+    { value: 'estimate', viewValue: '見積もりの高い順' },
+  ];
 
   constructor(
     private taskService: TaskService,
@@ -64,9 +71,22 @@ export class PageTaskComponent implements OnInit {
   }
 
   updateTaskList() {
-    this.taskService.getTaskListOrderByAsap().subscribe((taskList) => {
-      this.taskList = taskList;
-    });
+    console.log('update');
+    let observer: Observable<Task[]> | null = null;
+    switch (this.orderTypesValue) {
+      case 'asap':
+        observer = this.taskService.getTaskListOrderByAsap();
+        break;
+      case 'estimate':
+        observer = this.taskService.getTaskListOrderByEstimate();
+        break;
+    }
+
+    if (observer !== null) {
+      observer.subscribe((taskList) => {
+        this.taskList = taskList;
+      });
+    }
   }
 
   formatDatetime(datetime: Date) {
