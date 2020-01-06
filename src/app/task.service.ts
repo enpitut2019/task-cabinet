@@ -142,4 +142,13 @@ export class TaskService {
     }));
   }
 
+  getTaskListOrderByEstimate(): Observable<Task[]> {
+    return this.getTaskList().pipe(map((taskList: Task[]) => {
+      const filteredList: Task[] = taskList.filter((task: Task) => task.finishedAt === null);
+      return filteredList.sort((t1: Task, t2: Task) => {
+        return t2.estimate - t1.estimate;
+      });
+    }));
+  }
+
 }

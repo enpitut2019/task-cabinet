@@ -16,7 +16,7 @@ import {
   MatDatepickerModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSliderModule,
+  MatSliderModule, MatSelectModule,
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -60,6 +60,7 @@ import { CheckPatternDirective } from './shared/check-pattern.directive';
     MatFormFieldModule,
     MatInputModule,
     MatSliderModule,
+    MatSelectModule,
     MatGridListModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),

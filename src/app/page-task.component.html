@@ -1,5 +1,14 @@
 <app-layout>
   <div class ="changePushNoticeState-button-wrapper">
+    <mat-form-field class="order-select">
+      <mat-label>並び順</mat-label>
+      <mat-select (selectionChange)="updateTaskList()"
+                  [(value)]="orderTypesValue">
+        <mat-option *ngFor="let orderType of orderTypes" [value]="orderType.value">
+          {{orderType.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <button *ngIf="isSubscribing" mat-mini-fab (click)="onUnsubscribe()">
       <mat-icon>notifications_active</mat-icon>
     </button>
