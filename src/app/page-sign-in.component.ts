@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Login } from './models/login';
 import { AuthService } from './services/auth.service';
 import { AlertService } from './services/alert.service';
@@ -16,18 +16,30 @@ export class PageSignInComponent implements OnInit {
     password: '',
   };
 
-  constructor(private router: Router, private authService: AuthService, private alertService: AlertService) { }
+  private history: string;
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit() {
     if (this.authService.isLogin()) {
       this.router.navigate(['task']);
     }
+    this.activatedRoute.queryParams.subscribe(
+      params => {
+        this.history = params.history;
+      }
+    );
   }
 
   onSubmit() {
     this.authService.login(this.login)
       .then((res) => {
-        this.router.navigate(['task']);
+        this.router.navigate(this.history ? [this.history] : ['task']);
       })
       .catch((err) => {
         console.error(err);
