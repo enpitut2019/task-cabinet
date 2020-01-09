@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Task } from './task';
-import { TaskService } from './task.service';
+import { Task } from './models/task';
+import { TaskService } from './services/task.service';
 import { AlertService } from './services/alert.service';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';

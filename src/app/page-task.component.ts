@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from './task';
-import { TaskService } from './task.service';
+import { Task } from './models/task';
+import { TaskService } from './services/task.service';
 import { DatePipe } from '@angular/common';
 import { DeviceService } from './services/device.service';
 import { AlertService } from './services/alert.service';

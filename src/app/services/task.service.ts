@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Task } from './task';
+import { Task } from '../models/task';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../environments/environment';
-import { AuthService } from './services/auth.service';
+import { environment } from '../../environments/environment';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
