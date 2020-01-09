@@ -4,16 +4,33 @@ import { TaskService } from './services/task.service';
 import { DatePipe } from '@angular/common';
 import { DeviceService } from './services/device.service';
 import { AlertService } from './services/alert.service';
-import { Observable } from 'rxjs';
+import { Observable, timer } from 'rxjs';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-page-task',
   templateUrl: './page-task.component.html',
-  styleUrls: ['./page-task.component.scss']
+  styleUrls: ['./page-task.component.scss'],
+  animations: [
+    trigger('taskState', [
+      state('open', style({
+      })),
+      state('close', style({
+        height: 0,
+        margin: 0,
+        padding: 0,
+        opacity: 0,
+        display: 'none',
+      })),
+      transition('open => close', [
+        animate('0.2s')
+      ]),
+    ]),
+  ]
 })
 export class PageTaskComponent implements OnInit {
 
-  taskList: Task[] = [];
+  taskList: { task: Task, closing: boolean }[] = [];
   isSubscribing: boolean;
 
   orderTypesValue = 'asap';
@@ -63,7 +80,18 @@ export class PageTaskComponent implements OnInit {
 
   doneTask(task: Task) {
     this.taskService.doneTask(task).subscribe(() => {
-      this.updateTaskList();
+      const doneIndex: number = this.taskList.findIndex((value: { task: Task, closing: boolean }) => {
+        return task.id === value.task.id;
+      });
+
+      if (doneIndex >= 0) {
+        this.taskList[doneIndex].closing = true;
+        timer(200).subscribe(() => {
+          this.updateTaskList();
+        });
+      } else {
+        this.updateTaskList();
+      }
     }, err => {
       console.error(err);
       this.alertService.showErrorAlert('タスクの完了に失敗しました。');
@@ -84,7 +112,9 @@ export class PageTaskComponent implements OnInit {
 
     if (observer !== null) {
       observer.subscribe((taskList) => {
-        this.taskList = taskList;
+        this.taskList = taskList.map((value: Task) => {
+          return { task: value, closing: false };
+        });
       });
     }
   }
