@@ -25,7 +25,7 @@ export class LayoutComponent implements OnInit {
         pushType = parseInt(params.pushType);
       }
     );
-    if (pushType) {
+    if (pushType && this.isLoggedIn) {
       this.deviceService.postPushType(pushType).subscribe(res => {
         if (!res) {
           console.error("Fail to post pushType");
