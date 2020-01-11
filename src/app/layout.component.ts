@@ -22,13 +22,13 @@ export class LayoutComponent implements OnInit {
     this.alertService.hideAlert();
     this.route.queryParams.subscribe(
       params => {
-        pushType = parseInt(params.pushType);
+        pushType = parseInt(params.pushType, 10);
       }
     );
     if (pushType && this.isLoggedIn) {
       this.deviceService.postPushType(pushType).subscribe(res => {
         if (!res) {
-          console.error("Fail to post pushType");
+          console.error('Fail to post pushType');
         }
       }, err => {
         console.error(err);

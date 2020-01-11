@@ -116,7 +116,7 @@ export class DeviceService {
 
   postPushType(type: number): Observable<boolean> {
     return this.http.post(`${environment.apiUrl}/tcs/users/${this.authService.getUserId()}/algorithm`, {
-      type: type
+      type
     }, {
       headers: new HttpHeaders({
         Authorization: this.authService.getAuthHeader(),
