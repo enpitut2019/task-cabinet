@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from './services/alert.service';
+import { DeviceService } from './services/device.service';
 
 @Component({
   selector: 'app-layout',
@@ -10,10 +11,29 @@ import { AlertService } from './services/alert.service';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor(private router: Router, private authService: AuthService, private alertService: AlertService) { }
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private authService: AuthService,
+              private alertService: AlertService,
+              private deviceService: DeviceService) { }
 
   ngOnInit() {
+    let pushType: number = null;
     this.alertService.hideAlert();
+    this.route.queryParams.subscribe(
+      params => {
+        pushType = parseInt(params.pushType);
+      }
+    );
+    if (pushType) {
+      this.deviceService.postPushType(pushType).subscribe(res => {
+        if (!res) {
+          console.error("Fail to post pushType");
+        }
+      }, err => {
+        console.error(err);
+      });
+    }
   }
 
   isLoggedIn(): boolean {
