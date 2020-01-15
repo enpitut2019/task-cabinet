@@ -23,8 +23,9 @@ export class AuthService {
       .toPromise()
       .then((result: any) => {
         if (result.result !== undefined && result.result.token !== undefined) {
-          this.cookieService.set('user_token', result.result.token);
-          this.cookieService.set('user_id', result.result.id);
+          // 30 days
+          this.cookieService.set('user_token', result.result.token, 30);
+          this.cookieService.set('user_id', result.result.id, 30);
           return result.result;
         } else {
           return null;
