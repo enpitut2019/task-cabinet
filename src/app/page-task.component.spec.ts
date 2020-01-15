@@ -3,9 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageTaskComponent } from './page-task.component';
 import { DatePipe } from '@angular/common';
-import { TaskService } from './task.service';
+import { TaskService } from './services/task.service';
 import { of } from 'rxjs';
-import { Task } from './task';
+import { Task } from './models/task';
 import { ServiceWorkerModule, SwPush } from '@angular/service-worker';
 import { DeviceService } from './services/device.service';
 import { environment } from '../environments/environment';

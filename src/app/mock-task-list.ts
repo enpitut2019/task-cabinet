@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from './models/task';
 
 export const MOCK_TASK_LIST: Task[] = [
   {
