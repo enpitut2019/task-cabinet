@@ -32,6 +32,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { PageCreateUserComponent } from './page-create-user.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CheckPatternDirective } from './shared/check-pattern.directive';
+import { PageTaskInfoComponent } from './page-task-info.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CheckPatternDirective } from './shared/check-pattern.directive';
     PageTopComponent,
     PageSignInComponent,
     PageCreateUserComponent,
-    CheckPatternDirective
+    CheckPatternDirective,
+    PageTaskInfoComponent
   ],
   imports: [
     BrowserModule,
