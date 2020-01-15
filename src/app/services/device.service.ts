@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { SwPush } from '@angular/service-worker';
 import { Device } from '../models/device';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { AuthService } from './auth.service';
 
@@ -111,5 +112,22 @@ export class DeviceService {
       .catch(err => {
         throw err;
       });
+  }
+
+  postPushType(type: number): Observable<boolean> {
+    return this.http.post(`${environment.apiUrl}/tcs/users/${this.authService.getUserId()}/algorithm`, {
+      type
+    }, {
+      headers: new HttpHeaders({
+        Authorization: this.authService.getAuthHeader(),
+        'Content-Type': 'application/json',
+      }),
+      withCredentials: true
+    }).pipe(map((response: any): boolean => {
+      if (response.result === undefined) {
+        throw new Error('fail to post pushType.');
+      }
+      return true;
+    }));
   }
 }

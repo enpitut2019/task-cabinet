@@ -6,6 +6,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CookieService } from 'ngx-cookie-service';
 import { AlertService } from './services/alert.service';
+import { ServiceWorkerModule, SwPush } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -14,9 +16,12 @@ describe('LayoutComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LayoutComponent ],
-      imports: [ RouterTestingModule, HttpClientTestingModule ],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-      providers: [ CookieService, AlertService ]
+      providers: [ CookieService, AlertService, SwPush ]
     })
     .compileComponents();
   }));
