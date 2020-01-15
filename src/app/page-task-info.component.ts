@@ -3,7 +3,7 @@ import { Task } from './models/task';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { TaskService } from './services/task.service';
 import { switchMap } from 'rxjs/operators';
-import { of, timer } from 'rxjs';
+import { of } from 'rxjs';
 import { DatePipe } from '@angular/common';
 import { AlertService } from './services/alert.service';
 
@@ -21,7 +21,7 @@ export class PageTaskInfoComponent implements OnInit {
     private router: Router,
     private datePipe: DatePipe,
     private taskService: TaskService,
-    public alertService: AlertService
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -44,6 +44,13 @@ export class PageTaskInfoComponent implements OnInit {
       console.log(task);
     }, error => {
       this.alertService.showErrorAlert('タスクの取得に失敗しました。');
+      this.task = {
+        id: null,
+        name: '',
+        deadline: new Date(),
+        finishedAt: null,
+        estimate: 1,
+      };
     });
   }
 

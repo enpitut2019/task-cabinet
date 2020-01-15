@@ -7,6 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DatePipe } from '@angular/common';
 
 describe('PageTaskInfoComponent', () => {
   let component: PageTaskInfoComponent;
@@ -21,7 +22,11 @@ describe('PageTaskInfoComponent', () => {
         RouterTestingModule,
         HttpClientTestingModule,
       ],
-      providers: [AlertService, CookieService],
+      providers: [
+        AlertService,
+        CookieService,
+        DatePipe,
+      ],
     })
     .compileComponents();
   }));

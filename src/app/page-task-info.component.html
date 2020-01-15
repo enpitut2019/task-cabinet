@@ -1,7 +1,7 @@
 <app-layout>
   <div class="wrapper">
     <h1>タスクの詳細</h1>
-    <mat-card>
+    <mat-card *ngIf="task.id !== null">
       <mat-card-title>{{task.name}}</mat-card-title>
       <mat-grid-list cols="4" rowHeight="2rem">
         <mat-grid-tile [colspan]="1" [rowspan]="1" class="task-header">
